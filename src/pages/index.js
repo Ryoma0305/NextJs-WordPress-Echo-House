@@ -49,7 +49,7 @@ export const getStaticProps = async () => {
 export default function Home({ blogs, reviews }) {
   return (
     <main className="flex items-center justify-center h-screen">
-      <div>
+      {/* <div>
         <h1 className="text-3xl font-bold underline">
           Next.js with Headless WordPress
         </h1>
@@ -82,7 +82,7 @@ export default function Home({ blogs, reviews }) {
             );
           })}
         </ul>
-      </div>
+      </div> */}
     </main>
   );
 }
