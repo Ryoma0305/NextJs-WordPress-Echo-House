@@ -6,20 +6,20 @@ const navigation = [
   { name: "room", href: "/#room" },
   { name: "review", href: "/review/" },
   { name: "blog", href: "/blog/" },
-  { name: "access", href: "/access/" },
+  { name: "access", href: "/access/" }
 ];
 
 const Header = () => {
   return (
-    <header className="header fixed top-0 w-full ease-out-expo z-10" id="header">
+    <header className="header fixed top-0 z-10 w-full ease-out-expo" id="header">
       <div className="header-inner flex items-center justify-between">
-        <p className="mainvisual-contact-btn font-accent relative text-center text-xs md:text-lg cursor-pointer ease-out-expo bg-contact-btn">
-          <Link className="py-4 px-8 flex items-center justify-center" href="/contact/">
+        <p className="mainvisual-contact-btn relative cursor-pointer bg-contact-btn text-center font-accent text-xs ease-out-expo md:text-lg">
+          <Link className="flex items-center justify-center px-8 py-4" href="/contact/">
             CONTACT US
           </Link>
         </p>
 
-        <ul className="header-menu gap-4 justify-center font-accent text-sm hidden md:flex">
+        <ul className="header-menu hidden justify-center gap-4 font-accent text-sm md:flex">
           <li className="header-menu-list">
             <Link className="text-white" href="#about">
               ABOUT
@@ -96,12 +96,12 @@ const Header = () => {
           </nav>
         </div> */}
 
-        <div className="toggle-wrap w-8 h-8 relative mt-4 mr-4">
-          <div className="toggle-wrapper md:hidden z-100 cursor-pointer toggle-wrapper-base">
+        <div className="toggle-wrap relative mr-4 mt-4 h-8 w-8">
+          <div className="toggle-wrapper z-100 toggle-wrapper-base cursor-pointer md:hidden">
             <div className="toggle">
-              <span className="w-full h-[1px] top-0 left-0 block bg-white absolute transition-transform-600ms transition-top-500ms"></span>
-              <span className="w-full h-[1px] top-[10px] left-0 block bg-white absolute transition-transform-600ms transition-top-500ms"></span>
-              <span className="w-full h-[1px] top-[20px] left-0 block bg-white absolute transition-transform-600ms transition-top-500ms"></span>
+              <span className="transition-transform-600ms transition-top-500ms absolute left-0 top-0 block h-[1px] w-full bg-white"></span>
+              <span className="transition-transform-600ms transition-top-500ms absolute left-0 top-[10px] block h-[1px] w-full bg-white"></span>
+              <span className="transition-transform-600ms transition-top-500ms absolute left-0 top-[20px] block h-[1px] w-full bg-white"></span>
             </div>
           </div>
         </div>
