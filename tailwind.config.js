@@ -11,9 +11,7 @@ module.exports = {
         pink: "#ee9ca7",
       },
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "contact-btn": "linear-gradient(to right, #ffdde1, #ee9ca7)",
       },
     },
     transitionTimingFunction: {
