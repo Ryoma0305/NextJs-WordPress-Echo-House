@@ -6,10 +6,8 @@ const navigation = [
   { name: "room", href: "/#room" },
   { name: "review", href: "/review/" },
   { name: "blog", href: "/blog/" },
-  { name: "access", href: "/access/" },
+  { name: "access", href: "/access/" }
 ];
-
-console.log("navigation ", navigation);
 
 const Footer = () => {
   return (
@@ -27,29 +25,11 @@ const Footer = () => {
           </ul>
         </div>
         <div class="footer-sns-wrap">
-          <a
-            href="https://www.instagram.com/echofee_osaka/"
-            class="footer-sns-instagram"
-            target="_blank"
-          >
-            <Image
-              src="/images/ico-isg-bk.png"
-              width={500}
-              height={500}
-              alt="Instagram"
-            />
+          <a href="https://www.instagram.com/echofee_osaka/" class="footer-sns-instagram" target="_blank">
+            <Image src="/images/ico-isg-bk.png" width={500} height={500} alt="Instagram" />
           </a>
-          <a
-            href="https://www.facebook.com/ECHO-HOUSE-324063728318655/?modal=admin_todo_tour"
-            class="footer-sns-facebook"
-            target="_blank"
-          >
-            <Image
-              src="/images/ico-fb-bk.png"
-              width={500}
-              height={500}
-              alt="Facebook"
-            />
+          <a href="https://www.facebook.com/ECHO-HOUSE-324063728318655/?modal=admin_todo_tour" class="footer-sns-facebook" target="_blank">
+            <Image src="/images/ico-fb-bk.png" width={500} height={500} alt="Facebook" />
           </a>
         </div>
       </div>

@@ -1,6 +1,8 @@
 import { gql } from "@apollo/client";
 import { client } from "../../lid/apollo";
 import Link from "next/link";
+import About from "@/components/top/about";
+import Feature from "@/components/top/feature";
 
 export const getStaticProps = async () => {
   const { data } = await client.query({
@@ -35,20 +37,22 @@ export const getStaticProps = async () => {
           }
         }
       }
-    `,
+    `
   });
 
   return {
     props: {
       blogs: data?.blogs.nodes,
-      reviews: data?.reviews?.nodes,
-    },
+      reviews: data?.reviews?.nodes
+    }
   };
 };
 
 export default function Home({ blogs, reviews }) {
   return (
-    <main className="flex items-center justify-center h-screen">
+    <main>
+      <About />
+      <Feature />
       {/* <div>
         <h1 className="text-3xl font-bold underline">
           Next.js with Headless WordPress
