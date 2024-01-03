@@ -13,6 +13,10 @@ module.exports = {
         white: {
           100: "#FFFFFF",
           200: "#FFFEF7"
+        },
+        gray: {
+          100: "#707070",
+          200: "#F8F8F8"
         }
       },
       backgroundImage: {

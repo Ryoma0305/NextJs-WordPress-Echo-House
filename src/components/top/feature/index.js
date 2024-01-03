@@ -1,6 +1,5 @@
-import Link from "next/link";
+import SectionHeading from "@/components/common/sectionHeading";
 import Image from "next/image";
-import SectionHeading from "../common/sectionHeading";
 
 const lists = [
   { titleJp: "女性専用", titleEn: "FEMALE ONLY", image: "/images/feature-icon-women.png", alt: "", text: "入居者は女性の方のみですので、安心して生活して頂けます。" },
@@ -32,8 +31,8 @@ const Feature = () => {
   return (
     <section className="feature section-padding bg-white-200 px-4 py-16" id="features">
       <div className="mx-auto max-w-[1284px]">
-        <SectionHeading titleJp="エコーハウスの特徴" titleEn="FEATURE" />
-        <ul className="feature-listwrap mt-12 flex flex-col gap-16 md:flex-row md:flex-wrap md:justify-center md:gap-x-4">
+        <SectionHeading titleJp="エコーハウスの特徴" titleEn="Feature" />
+        <ul className="feature-listwrap flex flex-col gap-16 md:flex-row md:flex-wrap md:justify-center md:gap-x-4">
           {lists.map((item) => (
             <li className="feature-list flex flex-col items-center md:w-[30%] md:px-10" key={item.titleEn}>
               <p className="feature-list-icon">

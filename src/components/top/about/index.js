@@ -1,12 +1,11 @@
-import Link from "next/link";
-import SectionHeading from "../common/sectionHeading";
+import SectionHeading from "@/components/common/sectionHeading";
 
 const About = () => {
   return (
     <section className="about relative bg-[url('/images/1floor-6.jpg')] bg-cover bg-center bg-no-repeat px-4 py-16 before:absolute before:inset-0 before:bg-about-bg" id="about">
       <div className="about-textwrap relative">
-        <SectionHeading titleJp="コンセプト" titleEn="ABOUT US" />
-        <p className="about-text mt-8 text-center leading-loose">
+        <SectionHeading titleJp="コンセプト" titleEn="About us" />
+        <p className="about-text text-center leading-loose">
           エコーハウスは新今宮駅まで徒歩5分、通天閣、新世界まで徒歩7分、と大阪の中心地に位置し、
           <br />
           2018年にリニューアルオープンした女性専用シェアハウスです。

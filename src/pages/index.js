@@ -3,6 +3,7 @@ import { client } from "../../lid/apollo";
 import Link from "next/link";
 import About from "@/components/top/about";
 import Feature from "@/components/top/feature";
+import Room from "@/components/top/room";
 
 export const getStaticProps = async () => {
   const { data } = await client.query({
@@ -53,6 +54,7 @@ export default function Home({ blogs, reviews }) {
     <main>
       <About />
       <Feature />
+      <Room />
       {/* <div>
         <h1 className="text-3xl font-bold underline">
           Next.js with Headless WordPress
