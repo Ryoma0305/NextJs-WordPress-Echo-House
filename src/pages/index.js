@@ -55,6 +55,7 @@ export default function Home({ blogs, reviews }) {
       <About />
       <Feature />
       <Room />
+      <div className="hidden h-screen bg-[url('/images/f2.jpg')] bg-cover bg-fixed bg-center bg-no-repeat md:block"></div>
       {/* <div>
         <h1 className="text-3xl font-bold underline">
           Next.js with Headless WordPress

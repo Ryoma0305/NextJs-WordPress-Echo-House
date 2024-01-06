@@ -6,3 +6,23 @@
 body {
   color: #333;
 }
+
+.swiper .swiper-button-prev {
+  left: 0;
+}
+
+.swiper .swiper-button-next {
+  right: 0;
+}
+
+.swiper .swiper-button-next,
+.swiper .swiper-button-prev {
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 1.2rem;
+}
+
+.swiper .swiper-button-next::after,
+.swiper .swiper-button-prev::after {
+  font-size: 1.2rem;
+  color: #000;
+}

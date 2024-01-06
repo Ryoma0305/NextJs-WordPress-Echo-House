@@ -20,7 +20,8 @@ module.exports = {
         }
       },
       backgroundImage: {
-        "contact-btn": "linear-gradient(to right, #ffdde1, #ee9ca7)",
+        "gradient-pink": "linear-gradient(to right, #ffdde1, #ee9ca7)",
+        "gradient-green": "linear-gradient(-225deg, #B7F8DB 0%, #50A7C2 100%)",
         "about-bg": "linear-gradient(90deg, #fff 5%, rgba(255, 255, 255, 0.6))"
       }
     },

@@ -29,7 +29,7 @@ const Header = () => {
   return (
     <header className="header fixed top-0 z-10 w-full ease-out-expo" id="header">
       <div className="header-inner flex items-center justify-between">
-        <p className="mainvisual-contact-btn relative cursor-pointer bg-contact-btn text-center font-accent text-xs ease-out-expo md:text-lg">
+        <p className="mainvisual-gradient-pink bg-gradient-pink relative cursor-pointer text-center font-accent text-xs ease-out-expo md:text-lg">
           <Link className="flex items-center justify-center px-8 py-4 text-white-100" href="/contact/">
             CONTACT US
           </Link>
