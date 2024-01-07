@@ -198,17 +198,17 @@ const Room = () => {
             </div>
           </div>
         ))}
-        <div class="area">
+        <div className="area">
           {areas.map((item, index) => (
             <AreaSlider props={item.slides} key={index} />
           ))}
 
           <p className="mt-8 inline-block bg-gradient-green px-4 py-3 text-white-100">3Dビュー探索</p>
-          <ul class="mt-8 flex flex-col items-center md:flex-row md:flex-wrap md:items-start md:gap-4">
+          <ul className="mt-8 flex flex-col items-center md:flex-row md:flex-wrap md:items-start md:gap-4">
             {views.map((item, index) => (
-              <li class="d-list-img relative rounded-md border border-gray-300 md:w-[48%]" key={index}>
-                <iframe className="w-full" src={item.iframe} width="400" height="300" frameborder="0" style={{ border: 0 }} allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                <p class="hover-mask-text mt-4 border-t border-gray-300 p-2">{item.text}</p>
+              <li className="d-list-img relative rounded-md border border-gray-300 md:w-[48%]" key={index}>
+                <iframe className="w-full" src={item.iframe} width="400" height="300" frameBorder="0" style={{ border: 0 }} allowFullScreen="" aria-hidden="false" tabIndex="0"></iframe>
+                <p className="hover-mask-text mt-4 border-t border-gray-300 p-2">{item.text}</p>
               </li>
             ))}
           </ul>

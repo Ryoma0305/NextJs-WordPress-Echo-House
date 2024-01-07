@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Button = ({ title, href, target = "" }) => {
   return (
-    <p class="flex justify-center">
+    <p className="flex justify-center">
       <Link
         href={href}
         target={target}

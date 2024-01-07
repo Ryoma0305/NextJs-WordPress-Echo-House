@@ -4,26 +4,20 @@ import Link from "next/link";
 import About from "@/components/top/about";
 import Feature from "@/components/top/feature";
 import Room from "@/components/top/room";
+import Review from "@/components/top/review";
 
 export const getStaticProps = async () => {
   const { data } = await client.query({
     query: gql`
-      query AllBlogsQuery {
+      query AllQuery {
         reviews {
           nodes {
             reviews {
-              age
-              atmosphereImpression
-              atmosphereRating
-              cleanlinessImpression
-              cleanlinessRating
-              country
-              impression
-              locationImpression
-              locationRating
               name
-              priceImpression
-              priceRating
+              reviewerImg {
+                sourceUrl
+              }
+              reviewTitle
             }
             id
             slug
@@ -56,10 +50,9 @@ export default function Home({ blogs, reviews }) {
       <Feature />
       <Room />
       <div className="hidden h-screen bg-[url('/images/f2.jpg')] bg-cover bg-fixed bg-center bg-no-repeat md:block"></div>
+      <Review reviews={reviews} />
       {/* <div>
-        <h1 className="text-3xl font-bold underline">
-          Next.js with Headless WordPress
-        </h1>
+        <h1 className="text-3xl font-bold underline">Next.js with Headless WordPress</h1>
         <div className="mt-5 space-y-2">
           {blogs.map((post) => {
             const { id, slug, title } = post;
@@ -82,7 +75,7 @@ export default function Home({ blogs, reviews }) {
                 </Link>
                 <p
                   dangerouslySetInnerHTML={{
-                    __html: reviews.atmosphereImpression,
+                    __html: reviews.atmosphereImpression
                   }}
                 />
               </li>
