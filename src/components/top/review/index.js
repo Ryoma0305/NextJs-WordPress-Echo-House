@@ -9,7 +9,7 @@ const Review = ({ reviews }) => {
         <SectionHeading titleJp="お客様の声" titleEn="Review" />
       </div>
       <ReviewSlider reviews={reviews} />
-      <div className="my-16">
+      <div className="mt-16">
         <Button title="View more" href="/reviews/" />
       </div>
     </section>

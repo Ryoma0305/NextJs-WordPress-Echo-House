@@ -30,14 +30,14 @@ const ReviewSlider = ({ reviews }) => {
       >
         {reviews.map((item) => (
           <SwiperSlide key={item.id} className="px-4">
-            <Link href={`/reviews/${item.slug}`}>
-              <p className="flex justify-center">
-                <Image src={item.reviews.reviewerImg.sourceUrl} width="72" height="72" alt="" />
-              </p>
-              <div className="mt-2 flex flex-col items-center gap-2">
+            <Link href={`/reviews/${item.slug}`} className="flex flex-col">
+              <div className="order-2 mt-2 flex flex-col items-center gap-2">
                 <p className="text-xl">{item.reviews.name}</p>
                 <p className="text-center text-sm">{item.reviews.reviewTitle}</p>
               </div>
+              <p className="order-1 flex justify-center">
+                <Image src={item.reviews.reviewerImg.sourceUrl} width="72" height="72" alt="" />
+              </p>
             </Link>
           </SwiperSlide>
         ))}

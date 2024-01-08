@@ -5,6 +5,7 @@ import About from "@/components/top/about";
 import Feature from "@/components/top/feature";
 import Room from "@/components/top/room";
 import Review from "@/components/top/review";
+import Blog from "@/components/top/blog";
 
 export const getStaticProps = async () => {
   const { data } = await client.query({
@@ -26,9 +27,16 @@ export const getStaticProps = async () => {
         }
         blogs {
           nodes {
-            id
-            slug
+            date
+            featuredImage {
+              node {
+                sourceUrl
+              }
+            }
             title
+            slug
+            id
+            content
           }
         }
       }
@@ -51,6 +59,7 @@ export default function Home({ blogs, reviews }) {
       <Room />
       <div className="hidden h-screen bg-[url('/images/f2.jpg')] bg-cover bg-fixed bg-center bg-no-repeat md:block"></div>
       <Review reviews={reviews} />
+      <Blog blogs={blogs} />
       {/* <div>
         <h1 className="text-3xl font-bold underline">Next.js with Headless WordPress</h1>
         <div className="mt-5 space-y-2">
