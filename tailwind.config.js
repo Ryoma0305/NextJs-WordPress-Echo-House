@@ -16,13 +16,29 @@ module.exports = {
         },
         gray: {
           100: "#707070",
-          200: "#F8F8F8"
+          200: "#F8F8F8",
+          300: "#F6F6F6"
         }
       },
       backgroundImage: {
         "gradient-pink": "linear-gradient(to right, #ffdde1, #ee9ca7)",
         "gradient-green": "linear-gradient(-225deg, #B7F8DB 0%, #50A7C2 100%)",
         "about-bg": "linear-gradient(90deg, #fff 5%, rgba(255, 255, 255, 0.6))"
+      },
+      animation: {
+        "fade-in-bottom": "fade-in-bottom 0.6s ease-out both"
+      },
+      keyframes: {
+        "fade-in-bottom": {
+          "0%": {
+            transform: "translateY(50px)",
+            opacity: "0"
+          },
+          to: {
+            transform: "translateY(0)",
+            opacity: "1"
+          }
+        }
       }
     },
     transitionTimingFunction: {
