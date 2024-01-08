@@ -31,7 +31,7 @@ const lists = [
 const Feature = () => {
   return (
     <FadeInBottom>
-      <section className="feature section-padding bg-white-200 px-4 py-16" id="features">
+      <section className="feature section-padding bg-white-200 px-4 py-16" id="feature">
         <div className="mx-auto max-w-[1284px]">
           <SectionHeading titleJp="エコーハウスの特徴" titleEn="Feature" />
           <ul className="feature-listwrap flex flex-col gap-16 md:flex-row md:flex-wrap md:justify-center md:gap-x-4">

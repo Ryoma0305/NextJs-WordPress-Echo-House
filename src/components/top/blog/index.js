@@ -9,7 +9,7 @@ import { FadeInBottom } from "@/components/common/FadeInBottom";
 const Blog = ({ blogs }) => {
   return (
     <FadeInBottom>
-      <section className="bg-white-200 px-4 py-16" id="features">
+      <section className="bg-white-200 px-4 py-16" id="blog">
         <SectionHeading titleJp="ブログ" titleEn="Blog" />
         <ul className="mx-auto flex max-w-[1200px] flex-col gap-12 md:grid md:grid-cols-3 md:gap-8">
           {blogs.slice(0, 3).map((item) => (

@@ -144,7 +144,7 @@ const views = [
 const Room = () => {
   return (
     <FadeInBottom>
-      <section>
+      <section id="room">
         <SectionHeading titleJp="お部屋案内" titleEn="Room" />
         <div className="mx-auto max-w-[1200px]">
           {rooms.map((item, index) => (

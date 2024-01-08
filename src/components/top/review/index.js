@@ -6,7 +6,7 @@ import { FadeInBottom } from "@/components/common/FadeInBottom";
 const Review = ({ reviews }) => {
   return (
     <FadeInBottom>
-      <section className="bg-white-200 py-16" id="features">
+      <section className="bg-white-200 py-16" id="review">
         <div className="mx-auto max-w-[1200px]">
           <SectionHeading titleJp="お客様の声" titleEn="Review" />
         </div>
