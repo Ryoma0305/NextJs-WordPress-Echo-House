@@ -1,11 +1,11 @@
 import { gql } from "@apollo/client";
 import { client } from "../../lid/apollo";
-import Link from "next/link";
 import About from "@/components/top/about";
 import Feature from "@/components/top/feature";
 import Room from "@/components/top/room";
 import Review from "@/components/top/review";
 import Blog from "@/components/top/blog";
+import Access from "@/components/top/access";
 
 export const getStaticProps = async () => {
   const { data } = await client.query({
@@ -60,38 +60,7 @@ export default function Home({ blogs, reviews }) {
       <div className="hidden h-screen bg-[url('/images/f2.jpg')] bg-cover bg-fixed bg-center bg-no-repeat md:block"></div>
       <Review reviews={reviews} />
       <Blog blogs={blogs} />
-      {/* <div>
-        <h1 className="text-3xl font-bold underline">Next.js with Headless WordPress</h1>
-        <div className="mt-5 space-y-2">
-          {blogs.map((post) => {
-            const { id, slug, title } = post;
-            return (
-              <Link key={id} href={`/posts/${slug}`} className="block">
-                {title}
-              </Link>
-            );
-          })}
-        </div>
-
-        <ul className="mt-5 space-y-2">
-          {reviews.map((post) => {
-            const { id, slug, title, reviews } = post;
-            console.log(reviews);
-            return (
-              <li key={id}>
-                <Link key={id} href={`/posts/${slug}`} className="block">
-                  {title}
-                </Link>
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: reviews.atmosphereImpression
-                  }}
-                />
-              </li>
-            );
-          })}
-        </ul>
-      </div> */}
+      <Access />
     </main>
   );
 }
