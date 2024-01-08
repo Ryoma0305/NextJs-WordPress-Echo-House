@@ -1,5 +1,6 @@
 const { default: Link } = require("next/link");
 import { FaFacebook, FaInstagram } from "react-icons/fa";
+import BackToTopButton from "./common/BackToTopButton";
 
 const navigation = [
   { name: "about", href: "/about/" },
@@ -47,11 +48,7 @@ const Footer = () => {
           ))}
         </ul>
       </div>
-      <div className="fixed inline-flex bg-gradient-green text-center text-white-100">
-        <a href="#" className="flex flex-col items-center gap-1 p-3 text-xs">
-          <span className="h-0 w-0 border-x-[8px] border-b-[10px] border-t-0 border-solid border-[transparent_transparent_#fff_transparent]"></span>TOP
-        </a>
-      </div>
+      <BackToTopButton />
     </footer>
   );
 };
