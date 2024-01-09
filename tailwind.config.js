@@ -26,7 +26,8 @@ module.exports = {
         "about-bg": "linear-gradient(90deg, #fff 5%, rgba(255, 255, 255, 0.6))"
       },
       animation: {
-        "fade-in-bottom": "fade-in-bottom 0.6s ease-out both"
+        "fade-in-bottom": "fade-in-bottom 0.6s ease-out both",
+        jump: "jump 2s infinite"
       },
       keyframes: {
         "fade-in-bottom": {
@@ -37,6 +38,17 @@ module.exports = {
           to: {
             transform: "translateY(0)",
             opacity: "1"
+          }
+        },
+        jump: {
+          "0%": {
+            transform: "rotate(-45deg) translate(0, 0)"
+          },
+          "20%": {
+            transform: "rotate(-45deg) translate(-10px, 10px)"
+          },
+          "40%": {
+            transform: "rotate(-45deg) translate(0, 0)"
           }
         }
       }
