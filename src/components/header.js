@@ -1,6 +1,6 @@
-const { default: Link } = require("next/link");
+import { useState, useCallback } from "react";
+import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 
 const navigation = [
@@ -20,24 +20,30 @@ const sns = [
   }
 ];
 
-const Header = () => {
+export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const toggleFunction = () => {
     setIsOpen(!isOpen);
   };
 
+  // const [isHamburger, setIsHamburger] = useState(false);
+
+  // const openHamburger = useCallback(() => {
+  //   setIsHamburger(true);
+  // }, []);
+
   return (
-    <header className="header fixed top-0 z-10 w-full ease-out-expo" id="header">
-      <div className="header-inner flex items-center justify-between">
-        <p className="mainvisual-gradient-pink bg-gradient-pink relative cursor-pointer text-center font-accent text-xs ease-out-expo md:text-lg">
+    <header className="fixed top-0 z-10 w-full ease-out-expo" id="header">
+      <div className="flex items-center justify-between">
+        <p className="relative cursor-pointer bg-gradient-pink text-center font-accent text-xs ease-out-expo md:text-lg">
           <Link className="flex items-center justify-center px-8 py-4 text-white-100" href="/contact/">
             CONTACT US
           </Link>
         </p>
 
-        <ul className="header-menu hidden justify-center gap-4 font-accent text-sm md:flex">
+        <ul className="hidden justify-center gap-4 font-accent text-sm md:flex">
           {navigation.map((item) => (
-            <li className="header-menu-list" key={item.name}>
+            <li key={item.name}>
               <Link className="uppercase text-white-100" href={item.href}>
                 {item.name}
               </Link>
@@ -45,29 +51,31 @@ const Header = () => {
           ))}
         </ul>
 
-        <div className={isOpen ? "fixed inset-0 z-40 flex h-screen flex-col bg-blue-100 md:hidden" : "fixed right-[-100%] md:right-4 md:hidden"}>
-          <nav>
-            <ul className="list-none">
-              {navigation.map((item) => (
-                <li key={item.name}>
-                  <Link href={item.href} className="uppercase">
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+        {isOpen && (
+          <div className="fixed inset-0 z-40 flex h-screen flex-col bg-blue-100 md:hidden">
+            <nav>
+              <ul className="list-none">
+                {navigation.map((item) => (
+                  <li key={item.name}>
+                    <Link href={item.href} className="uppercase">
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
 
-            <ul className="list-none">
-              {sns.map((item) => (
-                <li key={item.name}>
-                  <Link href={item.href} target="_blank">
-                    {item.content}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </div>
+              <ul className="list-none">
+                {sns.map((item) => (
+                  <li key={item.name}>
+                    <Link href={item.href} target="_blank">
+                      {item.content}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
+        )}
 
         <button type="button" className="z-50 space-y-2 md:hidden" onClick={toggleFunction}>
           <span className={isOpen ? "block h-0.5 w-8 translate-y-2.5 rotate-45 bg-gray-600 duration-300" : "block h-0.5 w-8 bg-gray-600 duration-300"} />
@@ -75,7 +83,7 @@ const Header = () => {
           <span className={isOpen ? "block h-0.5 w-8 -rotate-45 bg-gray-600 duration-300" : "block h-0.5 w-8 bg-gray-600 duration-300"} />
         </button>
 
-        <ul className="header-sns hidden items-center justify-center gap-2 sm:flex">
+        <ul className="hidden items-center justify-center gap-2 sm:flex">
           {sns.map((item) => (
             <li key={item.name}>
               <Link href={item.href} target="_blank">
@@ -87,6 +95,4 @@ const Header = () => {
       </div>
     </header>
   );
-};
-
-export default Header;
+}

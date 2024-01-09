@@ -1,4 +1,4 @@
-import { FadeAnimation, FadeInBottom } from "@/components/common/FadeInBottom";
+import { FadeInBottom } from "@/components/common/FadeInBottom";
 import SectionHeading from "@/components/common/sectionHeading";
 
 const About = () => {

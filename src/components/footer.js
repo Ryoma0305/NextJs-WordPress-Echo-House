@@ -1,4 +1,4 @@
-const { default: Link } = require("next/link");
+import Link from "next/link";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 import BackToTopButton from "./common/BackToTopButton";
 
