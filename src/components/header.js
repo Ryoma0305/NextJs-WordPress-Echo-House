@@ -41,7 +41,7 @@ export default function Header() {
           </Link>
         </p>
 
-        <ul className="hidden justify-center gap-4 font-accent text-sm md:flex">
+        <ul className="hidden justify-center gap-12 font-accent text-base md:flex">
           {navigation.map((item) => (
             <li key={item.name}>
               <Link className="uppercase text-white-100" href={item.href}>
@@ -83,10 +83,10 @@ export default function Header() {
           <span className={isOpen ? "block h-0.5 w-8 -rotate-45 bg-gray-600 duration-300" : "block h-0.5 w-8 bg-gray-600 duration-300"} />
         </button>
 
-        <ul className="hidden items-center justify-center gap-2 sm:flex">
+        <ul className="hidden items-center justify-center gap-2 pr-8 sm:flex">
           {sns.map((item) => (
             <li key={item.name}>
-              <Link href={item.href} target="_blank">
+              <Link href={item.href} target="_blank" className="text-2xl text-white-100">
                 {item.content}
               </Link>
             </li>
