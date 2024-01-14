@@ -15,7 +15,7 @@ const ReviewInfo = ({ title, rating, impression }) => {
             <span className="flex gap-2 text-yellow-400">{convertToStars(rating)}</span>
           </p>
         )}
-        {impression && <p>{impression}</p>}
+        {impression && <p dangerouslySetInnerHTML={{ __html: impression }} />}
       </div>
     </div>
   );
