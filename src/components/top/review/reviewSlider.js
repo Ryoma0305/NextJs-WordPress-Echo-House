@@ -36,7 +36,7 @@ const ReviewSlider = ({ reviews }) => {
                 <p className="text-center text-sm">{item.reviews.reviewTitle}</p>
               </div>
               <p className="order-1 flex justify-center">
-                <Image src={item.reviews.reviewerImg.sourceUrl} width="72" height="72" alt="" />
+                <Image src={item.reviews.reviewerImg?.sourceUrl} width="72" height="72" alt="" />
               </p>
             </Link>
           </SwiperSlide>
