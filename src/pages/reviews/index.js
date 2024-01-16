@@ -7,7 +7,7 @@ export const getStaticProps = async () => {
   const { data } = await client.query({
     query: gql`
       query reviewsQuery {
-        reviews {
+        reviews(first: 50) {
           nodes {
             reviews {
               name
