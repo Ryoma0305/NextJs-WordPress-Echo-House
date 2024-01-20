@@ -33,7 +33,7 @@ export const getStaticProps = async () => {
   };
 };
 
-export default function reviews({ blogs }) {
+export default function blogs({ blogs }) {
   return (
     <main>
       <div className="flex h-40 items-center justify-center bg-gradient-right-pink md:h-80">
