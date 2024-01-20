@@ -3,11 +3,12 @@ import { FaFacebook, FaInstagram } from "react-icons/fa";
 import BackToTopButton from "./common/BackToTopButton";
 
 const navigation = [
-  { name: "about", href: "/about/" },
-  { name: "room", href: "/#room" },
-  { name: "review", href: "/review/" },
-  { name: "blog", href: "/blog/" },
-  { name: "access", href: "/access/" }
+  { name: "top", href: "/" },
+  { name: "about", href: "#about" },
+  { name: "room", href: "#room" },
+  { name: "review", href: "/reviews/" },
+  { name: "blog", href: "/blogs/" },
+  { name: "access", href: "/#access" }
 ];
 
 const sns = [

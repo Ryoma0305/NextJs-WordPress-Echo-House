@@ -4,11 +4,12 @@ import Image from "next/image";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 
 const navigation = [
-  { name: "about", href: "/about/" },
+  { name: "top", href: "/" },
+  { name: "about", href: "/#about" },
   { name: "room", href: "/#room" },
-  { name: "review", href: "/review/" },
-  { name: "blog", href: "/blog/" },
-  { name: "access", href: "/access/" }
+  { name: "review", href: "/reviews/" },
+  { name: "blog", href: "/blogs/" },
+  { name: "access", href: "/#access" }
 ];
 
 const sns = [
