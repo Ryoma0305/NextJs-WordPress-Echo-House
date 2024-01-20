@@ -22,16 +22,16 @@ const sns = [
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-300 py-16">
+    <footer className="bg-gray-300 py-16 md:py-24">
       <div className="mx-auto max-w-[1200px]">
-        <div>
-          <p className="flex flex-col items-center text-xs">
-            女性専用シェアハウス<span className="font-accent text-2xl font-black">ECHO HOUSE</span>
+        <div className="md:flex md:justify-between">
+          <p className="flex flex-col items-center text-xs md:text-base">
+            女性専用シェアハウス<span className="font-accent text-2xl font-black md:text-3xl">ECHO HOUSE</span>
           </p>
 
-          <ul className="hidden md:flex">
+          <ul className="hidden md:flex md:gap-10">
             {navigation.map((item) => (
-              <li className="" key={item.name}>
+              <li className="md:text-xl" key={item.name}>
                 <Link className="uppercase" href={item.href}>
                   {item.name}
                 </Link>
@@ -39,9 +39,9 @@ const Footer = () => {
             ))}
           </ul>
         </div>
-        <ul className="mt-4 flex justify-center gap-2">
+        <ul className="mt-4 flex justify-center gap-2 md:justify-end">
           {sns.map((item) => (
-            <li key={item.name} className="text-xl">
+            <li key={item.name} className="text-xl md:text-4xl">
               <Link href={item.href} target="_blank">
                 {item.content}
               </Link>
