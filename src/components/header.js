@@ -9,7 +9,7 @@ const navigation = [
   { name: "room", href: "/#room" },
   { name: "review", href: "/reviews/" },
   { name: "blog", href: "/blogs/" },
-  { name: "access", href: "/#access" }
+  { name: "access", href: "/#access" },
 ];
 
 const sns = [
