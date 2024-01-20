@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
-import BackToTopButton from "./common/BackToTopButton";
+import BackToTopButton from "./BackToTopButton";
 
 const navigation = [
   { name: "top", href: "/" },
