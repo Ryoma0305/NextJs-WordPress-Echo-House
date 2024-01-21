@@ -27,12 +27,6 @@ export default function Header() {
     setIsOpen(!isOpen);
   };
 
-  // const [isHamburger, setIsHamburger] = useState(false);
-
-  // const openHamburger = useCallback(() => {
-  //   setIsHamburger(true);
-  // }, []);
-
   return (
     <header className="fixed top-0 z-10 w-full ease-out-expo" id="header">
       <div className="flex items-center justify-between">
@@ -51,37 +45,32 @@ export default function Header() {
             </li>
           ))}
         </ul>
+        <nav className="fixed inset-0 z-50 hidden h-screen flex-col bg-white-100 pt-32 aria-hidden:flex md:hidden" aria-hidden={isOpen}>
+          <ul className="flex list-none flex-col items-center gap-4">
+            {navigation.map((item) => (
+              <li key={item.name}>
+                <Link href={item.href} className="text-xl uppercase">
+                  {item.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
 
-        {isOpen && (
-          <div className="fixed inset-0 z-40 flex h-screen flex-col bg-blue-100 md:hidden">
-            <nav>
-              <ul className="list-none">
-                {navigation.map((item) => (
-                  <li key={item.name}>
-                    <Link href={item.href} className="uppercase">
-                      {item.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+          <ul className="mt-8 flex list-none justify-center gap-4">
+            {sns.map((item) => (
+              <li key={item.name}>
+                <Link href={item.href} target="_blank" className="text-3xl">
+                  {item.content}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
 
-              <ul className="list-none">
-                {sns.map((item) => (
-                  <li key={item.name}>
-                    <Link href={item.href} target="_blank">
-                      {item.content}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          </div>
-        )}
-
-        <button type="button" className="z-50 space-y-2 md:hidden" onClick={toggleFunction}>
-          <span className={isOpen ? "block h-0.5 w-8 translate-y-2.5 rotate-45 bg-gray-600 duration-300" : "block h-0.5 w-8 bg-gray-600 duration-300"} />
-          <span className={isOpen ? "block opacity-0 duration-300" : "block h-0.5 w-8 bg-gray-600 duration-300"} />
-          <span className={isOpen ? "block h-0.5 w-8 -rotate-45 bg-gray-600 duration-300" : "block h-0.5 w-8 bg-gray-600 duration-300"} />
+        <button type="button" className="group z-50 mr-4 space-y-2 md:hidden" onClick={toggleFunction} aria-expanded={isOpen}>
+          <span className="block h-[1px] w-8 bg-white-100 duration-300 group-aria-expanded:translate-y-[9px] group-aria-expanded:rotate-45 group-aria-expanded:bg-black" />
+          <span className="block h-[1px] w-8 bg-white-100 duration-300 group-aria-expanded:bg-black group-aria-expanded:opacity-0" />
+          <span className="block h-[1px] w-8 bg-white-100 duration-300 group-aria-expanded:translate-y-[-9px] group-aria-expanded:-rotate-45 group-aria-expanded:bg-black" />
         </button>
 
         <ul className="hidden items-center justify-center gap-2 pr-8 sm:flex">
