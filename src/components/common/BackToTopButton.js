@@ -1,29 +1,11 @@
-import { useEffect, useState } from "react";
+import useScrollActivator from "@/utils/scrollActivator";
 
 const BackToTopButton = () => {
-  const [isButtonActive, setIsButtonActive] = useState(false);
-
-  useEffect(() => {
-    window.addEventListener("scroll", scrollWindow);
-    return () => {
-      window.removeEventListener("scroll", scrollWindow);
-    };
-  }, []);
-
-  const scrollWindow = () => {
-    const top = 100;
-    let scroll = 0;
-    scroll = window.scrollY;
-    if (top <= scroll) {
-      setIsButtonActive(true);
-    } else {
-      setIsButtonActive(false);
-    }
-  };
+  const isScrolled = useScrollActivator(100);
 
   return (
     <div
-      className={isButtonActive ? "fixed bottom-0 right-0 opacity-100 transition-opacity duration-500 ease-out-expo" : "fixed bottom-0 right-0 opacity-0 transition-opacity duration-500 ease-out-expo"}
+      className={isScrolled ? "fixed bottom-0 right-0 opacity-100 transition-opacity duration-1000 ease-out-expo" : "fixed bottom-0 right-0 opacity-0 transition-opacity duration-1000 ease-out-expo"}
       id="toTop"
       aria-hidden="false"
     >
