@@ -2,6 +2,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 import useScrollActivator from "@/utils/scrollActivator";
+import clsx from "clsx";
 
 const navigation = [
   { name: "top", href: "/" },
@@ -31,7 +32,9 @@ export default function Header() {
 
   return (
     <header
-      className={isScrolled ? "fixed top-0 z-10 w-full bg-white-100 transition-all duration-1000 ease-out-expo" : "fixed top-0 z-10 w-full transition-all duration-1000 ease-out-expo"}
+      className={clsx("fixed top-0 z-10 w-full transition-all duration-1000 ease-out-expo", {
+        "bg-white-100": isScrolled
+      })}
       id="header"
     >
       <div className="flex items-center justify-between">
@@ -44,7 +47,13 @@ export default function Header() {
         <ul className="hidden justify-center gap-12 font-accent text-base md:flex">
           {navigation.map((item) => (
             <li key={item.name}>
-              <Link className={isScrolled ? "uppercase text-black transition-all duration-1000 ease-out-expo" : "uppercase text-white-100 transition-all duration-1000 ease-out-expo"} href={item.href}>
+              <Link
+                className={clsx("uppercase  transition-all duration-1000 ease-out-expo", {
+                  "text-black": isScrolled,
+                  "text-white-100": !isScrolled
+                })}
+                href={item.href}
+              >
                 {item.name}
               </Link>
             </li>
@@ -74,25 +83,22 @@ export default function Header() {
 
         <button type="button" className="group z-50 mr-4 space-y-2 md:hidden" onClick={toggleFunction} aria-expanded={isOpen}>
           <span
-            className={
-              isScrolled
-                ? "block h-[1px] w-8 bg-black transition-all duration-1000 ease-out-expo group-aria-expanded:translate-y-[9px] group-aria-expanded:rotate-45 group-aria-expanded:bg-black"
-                : "block h-[1px] w-8 bg-white-100 transition-all duration-1000 ease-out-expo group-aria-expanded:translate-y-[9px] group-aria-expanded:rotate-45 group-aria-expanded:bg-black"
-            }
+            className={clsx("block h-[1px] w-8 transition-all duration-1000 ease-out-expo group-aria-expanded:translate-y-[9px] group-aria-expanded:rotate-45 group-aria-expanded:bg-black", {
+              "bg-black": isScrolled,
+              "bg-white-100": !isScrolled
+            })}
           />
           <span
-            className={
-              isScrolled
-                ? "block h-[1px] w-8 bg-black transition-all duration-1000 ease-out-expo group-aria-expanded:bg-black group-aria-expanded:opacity-0"
-                : "block h-[1px] w-8 bg-white-100 transition-all duration-1000 ease-out-expo group-aria-expanded:bg-black group-aria-expanded:opacity-0"
-            }
+            className={clsx("block h-[1px] w-8 transition-all duration-1000 ease-out-expo group-aria-expanded:bg-black group-aria-expanded:opacity-0", {
+              "bg-black": isScrolled,
+              "bg-white-100": !isScrolled
+            })}
           />
           <span
-            className={
-              isScrolled
-                ? "block h-[1px] w-8 bg-black transition-all duration-1000 ease-out-expo group-aria-expanded:translate-y-[-9px] group-aria-expanded:-rotate-45 group-aria-expanded:bg-black"
-                : "block h-[1px] w-8 bg-white-100 transition-all duration-1000 ease-out-expo group-aria-expanded:translate-y-[-9px] group-aria-expanded:-rotate-45 group-aria-expanded:bg-black"
-            }
+            className={clsx("block h-[1px] w-8  transition-all duration-1000 ease-out-expo group-aria-expanded:translate-y-[-9px] group-aria-expanded:-rotate-45 group-aria-expanded:bg-black", {
+              "bg-black": isScrolled,
+              "bg-white-100": !isScrolled
+            })}
           />
         </button>
 
@@ -102,7 +108,10 @@ export default function Header() {
               <Link
                 href={item.href}
                 target="_blank"
-                className={isScrolled ? "text-2xl text-black transition-all duration-1000 ease-out-expo" : "text-2xl text-white-100 transition-all duration-1000 ease-out-expo"}
+                className={clsx("text-2xl  transition-all duration-1000 ease-out-expo", {
+                  "text-black": isScrolled,
+                  "text-white-100": !isScrolled
+                })}
               >
                 {item.content}
               </Link>

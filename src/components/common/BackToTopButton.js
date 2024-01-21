@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import useScrollActivator from "@/utils/scrollActivator";
 
 const BackToTopButton = () => {
@@ -5,7 +6,10 @@ const BackToTopButton = () => {
 
   return (
     <div
-      className={isScrolled ? "fixed bottom-0 right-0 opacity-100 transition-opacity duration-1000 ease-out-expo" : "fixed bottom-0 right-0 opacity-0 transition-opacity duration-1000 ease-out-expo"}
+      className={clsx("fixed bottom-0 right-0 transition-opacity duration-1000 ease-out-expo", {
+        "opacity-100": isScrolled,
+        "opacity-0": !isScrolled
+      })}
       id="toTop"
       aria-hidden="false"
     >
