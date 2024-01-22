@@ -1,10 +1,10 @@
 import { gql } from "@apollo/client";
 import { client } from "../../../lid/apollo";
 import Image from "next/image";
-import SectionHeading from "@/components/common/sectionHeading";
-import ReviewInfo from "@/components/reviews/reviewInfo";
-import ReviewImages from "@/components/reviews/reviewImages";
-import { formatJapaneseDate } from "@/utils/formatDate";
+import SectionHeading from "../../components/common/sectionHeading";
+import ReviewInfo from "../../components/reviews/reviewInfo";
+import ReviewImages from "../../components/reviews/reviewImages";
+import { formatJapaneseDate } from "../../utils/formatDate";
 
 export const getStaticPaths = async () => {
   const { data } = await client.query({

@@ -1,9 +1,9 @@
 import { gql } from "@apollo/client";
 import { client } from "../../../lid/apollo";
 import Image from "next/image";
-import SectionHeading from "@/components/common/sectionHeading";
-import { formatJapaneseDate } from "@/utils/formatDate";
-import Button from "@/components/common/button";
+import SectionHeading from "../../components/common/sectionHeading";
+import { formatJapaneseDate } from "../../utils/formatDate";
+import Button from "../../components/common/button";
 
 export const getStaticPaths = async () => {
   const { data } = await client.query({

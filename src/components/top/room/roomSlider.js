@@ -6,7 +6,7 @@ import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 import Image from "next/image";
-import Modal from "@/components/common/modal";
+import Modal from "../../../components/common/modal";
 
 const RoomSlider = ({ props }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);

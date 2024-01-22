@@ -1,12 +1,12 @@
 import { gql } from "@apollo/client";
 import { client } from "../../lid/apollo";
-import About from "@/components/top/about";
-import Feature from "@/components/top/feature";
-import Room from "@/components/top/room";
-import Review from "@/components/top/review";
-import Blog from "@/components/top/blog";
-import Access from "@/components/top/access";
-import MainVisual from "@/components/top/mainVisual";
+import About from "../components/top/about";
+import Feature from "../components/top/feature";
+import Room from "../components/top/room";
+import Review from "../components/top/review";
+import Blog from "../components/top/blog";
+import Access from "../components/top/access";
+import MainVisual from "../components/top/mainVisual";
 
 export const getStaticProps = async () => {
   const { data } = await client.query({

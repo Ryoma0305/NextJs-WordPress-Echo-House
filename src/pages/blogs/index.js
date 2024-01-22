@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { client } from "../../../lid/apollo";
 import { gql } from "@apollo/client";
-import { formatJapaneseDate } from "@/utils/formatDate";
+import { formatJapaneseDate } from "../../utils/formatDate";
 
 export const getStaticProps = async () => {
   const { data } = await client.query({
