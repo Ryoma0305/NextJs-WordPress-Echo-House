@@ -1,8 +1,9 @@
+import Layout from "../../components/common/Layout";
 import ContactForm from "../../components/contact/contact-form";
 
 export default function Form() {
   return (
-    <main>
+    <Layout>
       <div className="flex h-40 items-center justify-center bg-gradient-right-pink md:h-80">
         <h2 className="font-accent text-xl font-bold uppercase md:text-4xl">Contact</h2>
       </div>
@@ -27,6 +28,6 @@ export default function Form() {
 
         <ContactForm />
       </div>
-    </main>
+    </Layout>
   );
 }

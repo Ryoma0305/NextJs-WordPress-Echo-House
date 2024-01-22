@@ -3,6 +3,7 @@ import Image from "next/image";
 import { client } from "../../../lid/apollo";
 import { gql } from "@apollo/client";
 import { formatJapaneseDate } from "../../utils/formatDate";
+import Layout from "../../components/common/Layout";
 
 export const getStaticProps = async () => {
   const { data } = await client.query({
@@ -35,7 +36,7 @@ export const getStaticProps = async () => {
 
 export default function blogs({ blogs }) {
   return (
-    <main>
+    <Layout>
       <div className="flex h-40 items-center justify-center bg-gradient-right-pink md:h-80">
         <h2 className="font-accent text-xl font-bold uppercase md:text-4xl">Blog</h2>
       </div>
@@ -58,6 +59,6 @@ export default function blogs({ blogs }) {
           </ul>
         </div>
       </section>
-    </main>
+    </Layout>
   );
 }

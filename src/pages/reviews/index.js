@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { client } from "../../../lid/apollo";
 import { gql } from "@apollo/client";
+import Layout from "../../components/common/Layout";
 
 export const getStaticProps = async () => {
   const { data } = await client.query({
@@ -34,7 +35,7 @@ export const getStaticProps = async () => {
 
 export default function reviews({ reviews }) {
   return (
-    <main>
+    <Layout>
       <div className="flex h-40 items-center justify-center bg-gradient-right-pink md:h-80">
         <h2 className="font-accent text-xl font-bold uppercase md:text-4xl">Review</h2>
       </div>
@@ -57,6 +58,6 @@ export default function reviews({ reviews }) {
           </ul>
         </div>
       </section>
-    </main>
+    </Layout>
   );
 }
