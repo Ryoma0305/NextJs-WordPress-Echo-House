@@ -54,7 +54,7 @@ export const getStaticProps = async () => {
 
 export default function Home({ blogs, reviews }) {
   return (
-    <main>
+    <Layout>
       <MainVisual />
       <About />
       <Feature />
@@ -63,6 +63,6 @@ export default function Home({ blogs, reviews }) {
       <Review reviews={reviews} />
       <Blog blogs={blogs} />
       <Access />
-    </main>
+    </Layout>
   );
 }
