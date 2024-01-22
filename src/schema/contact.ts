@@ -1,5 +1,6 @@
 import { z } from "zod";
 
+const contactReason = z.enum(["見学希望", "入居希望", "その他"]);
 const email: z.ZodString = z
   .string({ required_error: "入力が必須の項目です" })
   .min(1, { message: "入力が必須の項目です" })
@@ -8,19 +9,22 @@ const email: z.ZodString = z
 const telephone: z.ZodString = z.string({ required_error: "入力が必須の項目です" }).min(10, { message: "電話番号を入力してください" }).max(14, { message: "入力値が長すぎます" });
 const givenName: z.ZodString = z.string({ required_error: "入力が必須の項目です" }).min(1, { message: "入力が必須の項目です" }).max(20, { message: "入力値が長すぎます" });
 const lastName: z.ZodString = z.string({ required_error: "入力が必須の項目です" }).min(1, { message: "入力が必須の項目です" }).max(20, { message: "入力値が長すぎます" });
-const organizationName: z.ZodString = z.string({ required_error: "入力が必須の項目です" }).min(1, { message: "入力が必須の項目です" }).max(50, { message: "入力値が長すぎます" });
+const age: z.ZodString = z.string();
+const country: z.ZodString = z.string().max(30, { message: "入力値が長すぎます" });
+const gender = z.enum(["男性", "女性"]);
+const job: z.ZodString = z.string().max(30, { message: "入力値が長すぎます" });
 const message: z.ZodString = z.string({ required_error: "入力が必須の項目です" }).min(1, { message: "入力が必須の項目です" }).max(4098, { message: "入力値が長すぎます" });
-const agree: z.ZodLiteral<string> = z.literal("true", {
-  errorMap: () => ({ message: "同意が必須です" })
-});
 
 export const ContactSchema = z.object({
-  email: email,
-  telephone: telephone,
-  givenName: givenName,
-  lastName: lastName,
-  organizationName: organizationName,
-  message: message,
-  agree: agree
+  ContactReason: contactReason,
+  Email: email,
+  Telephone: telephone,
+  GivenName: givenName,
+  LastName: lastName,
+  Age: age,
+  Country: country,
+  Gender: gender,
+  Job: job,
+  Message: message
 });
 export type ContactType = z.infer<typeof ContactSchema>;
