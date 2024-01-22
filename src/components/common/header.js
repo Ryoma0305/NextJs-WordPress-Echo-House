@@ -1,8 +1,8 @@
 import { useState } from "react";
 import Link from "next/link";
-import { FaFacebook, FaInstagram } from "react-icons/fa";
-import useScrollActivator from "@/utils/scrollActivator";
 import clsx from "clsx";
+import { FaFacebook, FaInstagram } from "react-icons/fa";
+import useScrollActivator from "../../utils/scrollActivator";
 
 const navigation = [
   { name: "top", href: "/" },
