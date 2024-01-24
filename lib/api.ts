@@ -69,7 +69,7 @@ export async function getReviewPostsWithSlug() {
   const data = await client.query({
     query: gql`
       query reviewsQuery {
-        reviews {
+        reviews(first: 50) {
           nodes {
             slug
           }
@@ -159,7 +159,7 @@ export async function getBlogPostsWithId() {
   const data = await client.query({
     query: gql`
       query reviewsQuery {
-        blogs {
+        blogs(first: 50) {
           nodes {
             id
           }
