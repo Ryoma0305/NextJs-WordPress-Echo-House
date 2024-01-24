@@ -1,7 +1,6 @@
 import { gql } from "@apollo/client";
 import { client } from "../../../lid/apollo";
 import Image from "next/image";
-import SectionHeading from "../../components/common/sectionHeading";
 import ReviewInfo from "../../components/reviews/reviewInfo";
 import ReviewImages from "../../components/reviews/reviewImages";
 import { formatJapaneseDate } from "../../utils/formatDate";
@@ -85,9 +84,11 @@ const Review = ({ review }) => {
   const totalScore = (review.reviews.staffRating + review.reviews.atmosphereRating + review.reviews.cleanlinessRating + review.reviews.locationRating + review.reviews.priceRating) / 5;
   return (
     <Layout>
+      <div className="flex h-40 items-center justify-center bg-slate-800 md:h-80">
+        <h1 className="font-accent text-xl font-bold uppercase text-white-100 md:text-4xl">Review</h1>
+      </div>
       <section className="px-4 pb-16 pt-32">
         <div className="mx-auto flex max-w-[1200px] flex-col gap-8">
-          <SectionHeading titleJp="入居者の声" titleEn="Review" />
           <div className="flex flex-col items-center gap-2">
             <p className="">
               <Image src={review.reviews.reviewerImg.sourceUrl} width="73" height="73" alt="" />

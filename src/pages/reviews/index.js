@@ -36,8 +36,8 @@ export const getStaticProps = async () => {
 export default function reviews({ reviews }) {
   return (
     <Layout>
-      <div className="flex h-40 items-center justify-center bg-gradient-right-pink md:h-80">
-        <h2 className="font-accent text-xl font-bold uppercase md:text-4xl">Review</h2>
+      <div className="flex h-40 items-center justify-center bg-slate-800 md:h-80">
+        <h1 className="font-accent text-xl font-bold uppercase text-white-100 md:text-4xl">Review</h1>
       </div>
       <section className="px-4 pb-32 pt-16">
         <div className="mx-auto flex max-w-[1200px]">

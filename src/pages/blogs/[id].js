@@ -1,7 +1,5 @@
 import { gql } from "@apollo/client";
 import { client } from "../../../lid/apollo";
-import Image from "next/image";
-import SectionHeading from "../../components/common/sectionHeading";
 import { formatJapaneseDate } from "../../utils/formatDate";
 import Button from "../../components/common/button";
 import Layout from "../../components/common/Layout";
@@ -59,9 +57,11 @@ export const getStaticProps = async ({ params }) => {
 const Blog = ({ blog }) => {
   return (
     <Layout>
+      <div className="flex h-40 items-center justify-center bg-slate-800 md:h-80">
+        <h1 className="font-accent text-xl font-bold uppercase text-white-100 md:text-4xl">Blog</h1>
+      </div>
       <section className="px-4 pb-16 pt-32">
         <div className="mx-auto flex max-w-[1100px] flex-col gap-8">
-          <SectionHeading titleJp="ブログ" titleEn="Blog" />
           <div>
             <h2 className="text-2xl font-bold">{blog.title}</h2>
             <time className="mt-4 inline-block" dateTime={new Date(blog.date).toISOString()}>
