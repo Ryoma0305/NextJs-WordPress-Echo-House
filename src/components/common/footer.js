@@ -32,7 +32,7 @@ const Footer = () => {
           <ul className="hidden md:flex md:gap-10">
             {navigation.map((item) => (
               <li className="md:text-xl" key={item.name}>
-                <Link className="uppercase" href={item.href}>
+                <Link className="uppercase duration-700 ease-out-expo hover:opacity-50" href={item.href}>
                   {item.name}
                 </Link>
               </li>

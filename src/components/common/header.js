@@ -32,14 +32,14 @@ export default function Header() {
 
   return (
     <header
-      className={clsx("fixed top-0 z-10 w-full transition-all duration-1000 ease-out-expo", {
+      className={clsx("fixed top-0 z-10 w-full transition-all duration-700 ease-out-expo", {
         "bg-white-100": isScrolled
       })}
       id="header"
     >
       <div className="flex items-center justify-between">
         <p className="relative cursor-pointer bg-gradient-pink text-center font-accent text-xs ease-out-expo md:text-lg">
-          <Link className="flex items-center justify-center px-8 py-4 text-white-100" href="/contact/">
+          <Link className="flex items-center justify-center px-8 py-4 text-white-100 duration-700 ease-out-expo hover:opacity-50" href="/contact/">
             CONTACT US
           </Link>
         </p>
@@ -48,7 +48,7 @@ export default function Header() {
           {navigation.map((item) => (
             <li key={item.name}>
               <Link
-                className={clsx("uppercase  transition-all duration-1000 ease-out-expo", {
+                className={clsx("uppercase  transition-all duration-700 ease-out-expo hover:opacity-50", {
                   "text-black": isScrolled,
                   "text-white-100": !isScrolled
                 })}
@@ -83,19 +83,19 @@ export default function Header() {
 
         <button type="button" className="group z-50 mr-4 space-y-2 md:hidden" onClick={toggleFunction} aria-expanded={isOpen}>
           <span
-            className={clsx("block h-[1px] w-8 transition-all duration-1000 ease-out-expo group-aria-expanded:translate-y-[9px] group-aria-expanded:rotate-45 group-aria-expanded:bg-black", {
+            className={clsx("block h-[1px] w-8 transition-all duration-700 ease-out-expo group-aria-expanded:translate-y-[9px] group-aria-expanded:rotate-45 group-aria-expanded:bg-black", {
               "bg-black": isScrolled,
               "bg-white-100": !isScrolled
             })}
           />
           <span
-            className={clsx("block h-[1px] w-8 transition-all duration-1000 ease-out-expo group-aria-expanded:bg-black group-aria-expanded:opacity-0", {
+            className={clsx("block h-[1px] w-8 transition-all duration-700 ease-out-expo group-aria-expanded:bg-black group-aria-expanded:opacity-0", {
               "bg-black": isScrolled,
               "bg-white-100": !isScrolled
             })}
           />
           <span
-            className={clsx("block h-[1px] w-8  transition-all duration-1000 ease-out-expo group-aria-expanded:translate-y-[-9px] group-aria-expanded:-rotate-45 group-aria-expanded:bg-black", {
+            className={clsx("block h-[1px] w-8  transition-all duration-700 ease-out-expo group-aria-expanded:translate-y-[-9px] group-aria-expanded:-rotate-45 group-aria-expanded:bg-black", {
               "bg-black": isScrolled,
               "bg-white-100": !isScrolled
             })}
@@ -108,7 +108,7 @@ export default function Header() {
               <Link
                 href={item.href}
                 target="_blank"
-                className={clsx("text-2xl  transition-all duration-1000 ease-out-expo", {
+                className={clsx("text-2xl  transition-all duration-700 ease-out-expo hover:opacity-50", {
                   "text-black": isScrolled,
                   "text-white-100": !isScrolled
                 })}
