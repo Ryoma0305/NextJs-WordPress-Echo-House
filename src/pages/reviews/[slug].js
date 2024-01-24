@@ -1,10 +1,11 @@
 import Image from "next/image";
-import ReviewInfo from "../../components/reviews/reviewInfo";
-import ReviewImages from "../../components/reviews/reviewImages";
+import ReviewInfo from "../../components/reviews/ReviewInfo";
+
 import { formatJapaneseDate } from "../../utils/formatDate";
 import Layout from "../../components/common/Layout";
 import { getReviewPost } from "../../../lib/api";
 import { getReviewPostsWithSlug } from "../../../lib/api";
+import ReviewImages from "../../components/reviews/ReviewImages";
 
 export const getStaticPaths = async () => {
   const { data } = await getReviewPostsWithSlug();

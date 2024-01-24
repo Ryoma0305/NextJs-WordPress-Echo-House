@@ -1,5 +1,5 @@
 import { formatJapaneseDate } from "../../utils/formatDate";
-import Button from "../../components/common/button";
+import Button from "../../components/common/Button";
 import Layout from "../../components/common/Layout";
 import { getBlogPost } from "../../../lib/api";
 import { getBlogPostsWithId } from "../../../lib/api";
