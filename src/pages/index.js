@@ -8,6 +8,7 @@ import Room from "../components/top/room";
 import Review from "../components/top/review";
 import Blog from "../components/top/blog";
 import Access from "../components/top/access";
+import Contact from "../components/top/contact";
 
 export const getStaticProps = async () => {
   const { data } = await client.query({
@@ -64,6 +65,7 @@ export default function Home({ blogs, reviews }) {
       <Review reviews={reviews} />
       <Blog blogs={blogs} />
       <Access />
+      <Contact />
     </Layout>
   );
 }
