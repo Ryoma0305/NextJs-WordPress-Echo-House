@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Image from "next/image";
-import Modal from "../common/modal";
+// import Modal from "../common/modal";
 
 const ReviewImages = ({ image1, image2, image3 }) => {
   const [modalImage, setModalImage] = useState(null);
@@ -34,7 +34,7 @@ const ReviewImages = ({ image1, image2, image3 }) => {
           </p>
         )}
       </div>
-      <Modal modalImage={modalImage} closeModal={closeModal} />
+      {/* <Modal modalImage={modalImage} closeModal={closeModal} /> */}
     </div>
   );
 };
