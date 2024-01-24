@@ -22,7 +22,7 @@ const sns = [
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-300 py-16 md:py-24">
+    <footer className="bg-gray-300 px-8 py-16 md:py-24">
       <div className="mx-auto max-w-[1200px]">
         <div className="md:flex md:justify-between">
           <p className="flex flex-col items-center text-xs md:text-base">
@@ -32,7 +32,7 @@ const Footer = () => {
           <ul className="hidden md:flex md:gap-10">
             {navigation.map((item) => (
               <li className="md:text-xl" key={item.name}>
-                <Link className="uppercase" href={item.href}>
+                <Link className="uppercase duration-700 ease-out-expo hover:opacity-50" href={item.href}>
                   {item.name}
                 </Link>
               </li>

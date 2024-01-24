@@ -1,22 +1,11 @@
-import { gql } from "@apollo/client";
-import { client } from "../../../lid/apollo";
-import Image from "next/image";
-import SectionHeading from "@/components/common/sectionHeading";
-import { formatJapaneseDate } from "@/utils/formatDate";
-import Button from "@/components/common/button";
+import { formatJapaneseDate } from "../../utils/formatDate";
+import Button from "../../components/common/Button";
+import Layout from "../../components/common/Layout";
+import { getBlogPost } from "../../../lib/api";
+import { getBlogPostsWithId } from "../../../lib/api";
 
 export const getStaticPaths = async () => {
-  const { data } = await client.query({
-    query: gql`
-      query reviewsQuery {
-        blogs {
-          nodes {
-            id
-          }
-        }
-      }
-    `
-  });
+  const { data } = await getBlogPostsWithId();
 
   const ids = data.blogs.nodes.map((blog) => ({ params: { id: blog.id } }));
 
@@ -27,26 +16,7 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params }) => {
-  const { data } = await client.query({
-    query: gql`
-      query GetBlogById($id: ID!) {
-        blogBy(id: $id) {
-          date
-          featuredImage {
-            node {
-              sourceUrl
-            }
-          }
-          id
-          title
-          content
-        }
-      }
-    `,
-    variables: {
-      id: params.id
-    }
-  });
+  const { data } = await getBlogPost(params);
 
   return {
     props: {
@@ -57,24 +27,28 @@ export const getStaticProps = async ({ params }) => {
 
 const Blog = ({ blog }) => {
   return (
-    <section className="px-4 pb-16 pt-32">
-      <div className="mx-auto flex max-w-[1100px] flex-col gap-8">
-        <SectionHeading titleJp="ブログ" titleEn="Blog" />
-        <div>
-          <h2 className="text-2xl font-bold">{blog.title}</h2>
-          <time className="mt-4 inline-block" dateTime={new Date(blog.date).toISOString()}>
-            {formatJapaneseDate(blog.date)}
-          </time>
-        </div>
-        <div
-          dangerouslySetInnerHTML={{ __html: blog.content }}
-          className="[&_.gallery-columns-3]:flex [&_.gallery-columns-3]:flex-col md:[&_.gallery-columns-3]:flex-row [&_.gallery]:gap-4 [&_p]:mb-4"
-        />
-        <div className="mt-16">
-          <Button title="Blog一覧へ" href="/blogs/" />
-        </div>
+    <Layout>
+      <div className="flex h-40 items-center justify-center bg-slate-800 md:h-80">
+        <h1 className="font-accent text-xl font-bold uppercase text-white-100 md:text-4xl">Blog</h1>
       </div>
-    </section>
+      <section className="px-4 pb-16 pt-32">
+        <div className="mx-auto flex max-w-[1100px] flex-col gap-8">
+          <div>
+            <h2 className="text-2xl font-bold">{blog.title}</h2>
+            <time className="mt-4 inline-block" dateTime={new Date(blog.date).toISOString()}>
+              {formatJapaneseDate(blog.date)}
+            </time>
+          </div>
+          <div
+            dangerouslySetInnerHTML={{ __html: blog.content }}
+            className="[&_.gallery-columns-3]:flex [&_.gallery-columns-3]:flex-col md:[&_.gallery-columns-3]:flex-row [&_.gallery]:gap-4 [&_p]:mb-4"
+          />
+          <div className="mt-16">
+            <Button title="Blog一覧へ" href="/blogs/" />
+          </div>
+        </div>
+      </section>
+    </Layout>
   );
 };
 

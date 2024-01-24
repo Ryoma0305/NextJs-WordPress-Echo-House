@@ -1,29 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
-import { client } from "../../../lid/apollo";
-import { gql } from "@apollo/client";
+import Layout from "../../components/common/Layout";
+import { getReviewPosts } from "../../../lib/api";
 
 export const getStaticProps = async () => {
-  const { data } = await client.query({
-    query: gql`
-      query reviewsQuery {
-        reviews(first: 50) {
-          nodes {
-            reviews {
-              name
-              reviewerImg {
-                sourceUrl
-              }
-              reviewTitle
-            }
-            id
-            slug
-            title
-          }
-        }
-      }
-    `
-  });
+  const { data } = await getReviewPosts();
 
   return {
     props: {
@@ -34,9 +15,9 @@ export const getStaticProps = async () => {
 
 export default function reviews({ reviews }) {
   return (
-    <main>
-      <div className="flex h-40 items-center justify-center bg-gradient-right-pink md:h-80">
-        <h2 className="font-accent text-xl font-bold uppercase md:text-4xl">Review</h2>
+    <Layout>
+      <div className="flex h-40 items-center justify-center bg-slate-800 md:h-80">
+        <h1 className="font-accent text-xl font-bold uppercase text-white-100 md:text-4xl">Review</h1>
       </div>
       <section className="px-4 pb-32 pt-16">
         <div className="mx-auto flex max-w-[1200px]">
@@ -57,6 +38,6 @@ export default function reviews({ reviews }) {
           </ul>
         </div>
       </section>
-    </main>
+    </Layout>
   );
 }

@@ -1,10 +1,10 @@
 import Image from "next/image";
-import RoomSlider from "./roomSlider";
-import SectionHeading from "@/components/common/sectionHeading";
-import FacilitySlider from "./facilitySlider";
-import AreaSlider from "./areaSlider";
-import Button from "@/components/common/button";
-import { FadeInBottom } from "@/components/common/FadeInBottom";
+import RoomSlider from "./RoomSlider";
+import SectionHeading from "../../common/SectionHeading";
+import FacilitySlider from "./FacilitySlider";
+import AreaSlider from "./AreaSlider";
+import Button from "../../../components/common/Button";
+import { FadeInBottom } from "../../../components/common/FadeInBottom";
 
 const rooms = [
   {

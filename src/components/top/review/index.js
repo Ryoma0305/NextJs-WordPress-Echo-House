@@ -1,7 +1,7 @@
-import SectionHeading from "@/components/common/sectionHeading";
-import ReviewSlider from "./reviewSlider";
-import Button from "@/components/common/button";
-import { FadeInBottom } from "@/components/common/FadeInBottom";
+import SectionHeading from "../../common/SectionHeading";
+import ReviewSlider from "./ReviewSlider";
+import Button from "../../../components/common/Button";
+import { FadeInBottom } from "../../../components/common/FadeInBottom";
 
 const Review = ({ reviews }) => {
   return (

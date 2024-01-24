@@ -1,5 +1,5 @@
-import { FadeInBottom } from "@/components/common/FadeInBottom";
-import SectionHeading from "@/components/common/sectionHeading";
+import { FadeInBottom } from "../../../components/common/FadeInBottom";
+import SectionHeading from "../../../components/common/SectionHeading";
 
 const Access = () => {
   return (

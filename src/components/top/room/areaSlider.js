@@ -6,7 +6,7 @@ import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import { FreeMode, Navigation } from "swiper/modules";
 import Image from "next/image";
-import Modal from "@/components/common/modal";
+// import Modal from "../../../components/common/modal";
 
 const AreaSlider = ({ props }) => {
   const [modalImage, setModalImage] = useState(null);
@@ -39,7 +39,7 @@ const AreaSlider = ({ props }) => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <Modal modalImage={modalImage} closeModal={closeModal} />
+      {/* <Modal modalImage={modalImage} closeModal={closeModal} /> */}
     </div>
   );
 };

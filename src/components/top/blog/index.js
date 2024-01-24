@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import SectionHeading from "@/components/common/sectionHeading";
-import Button from "@/components/common/button";
-import { truncateText } from "@/utils/truncateText";
-import { formatJapaneseDate } from "@/utils/formatDate";
-import { FadeInBottom } from "@/components/common/FadeInBottom";
+import SectionHeading from "../../common/SectionHeading";
+import Button from "../../../components/common/Button";
+import { truncateText } from "../../../utils/truncateText";
+import { formatJapaneseDate } from "../../../utils/formatDate";
+import { FadeInBottom } from "../../../components/common/FadeInBottom";
 
 const Blog = ({ blogs }) => {
   return (

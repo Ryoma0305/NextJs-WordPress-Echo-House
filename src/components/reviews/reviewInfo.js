@@ -7,8 +7,8 @@ function convertToStars(num) {
 const ReviewInfo = ({ title, rating, impression }) => {
   return (
     <div className="md:mx-auto md:w-1/2">
-      {title && <h3 className="inline-block rounded-t-md bg-green px-4 font-bold text-white-100">{title}</h3>}
-      <div className="flex flex-col gap-4 border-2 border-green p-4">
+      {title && <h3 className="inline-block rounded-t-md bg-slate-800  px-4 font-bold text-white-100">{title}</h3>}
+      <div className="flex flex-col gap-4 border-2 border-slate-800  p-4">
         {rating && (
           <p className="flex items-center gap-1">
             評価：
