@@ -1,23 +1,13 @@
-import { gql } from "@apollo/client";
-import { client } from "../../../lid/apollo";
 import Image from "next/image";
 import ReviewInfo from "../../components/reviews/reviewInfo";
 import ReviewImages from "../../components/reviews/reviewImages";
 import { formatJapaneseDate } from "../../utils/formatDate";
 import Layout from "../../components/common/Layout";
+import { getReviewPost } from "../../../lib/api";
+import { getReviewPostsWithSlug } from "../../../lib/api";
 
 export const getStaticPaths = async () => {
-  const { data } = await client.query({
-    query: gql`
-      query reviewsQuery {
-        reviews {
-          nodes {
-            slug
-          }
-        }
-      }
-    `
-  });
+  const { data } = await getReviewPostsWithSlug();
 
   const slugs = data.reviews.nodes.map((review) => ({ params: { slug: review.slug } }));
 
@@ -28,50 +18,7 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params }) => {
-  const { data } = await client.query({
-    query: gql`
-      query GetReviewBySlug($slug: String!) {
-        reviewBy(slug: $slug) {
-          reviews {
-            age
-            atmosphereImpression
-            atmosphereRating
-            cleanlinessImpression
-            country
-            cleanlinessRating
-            impression
-            locationImpression
-            locationRating
-            name
-            priceImpression
-            priceRating
-            reviewImg1 {
-              sourceUrl
-            }
-            reviewImg2 {
-              sourceUrl
-            }
-            reviewImg3 {
-              sourceUrl
-            }
-            reviewerImg {
-              sourceUrl
-            }
-            reviewTitle
-            staffImpression
-            staffMessage
-            staffRating
-          }
-          slug
-          title
-          date
-        }
-      }
-    `,
-    variables: {
-      slug: params.slug
-    }
-  });
+  const { data } = await getReviewPost(params);
 
   return {
     props: {

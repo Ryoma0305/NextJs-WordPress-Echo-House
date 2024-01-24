@@ -1,5 +1,3 @@
-import { gql } from "@apollo/client";
-import { client } from "../../lid/apollo";
 import Layout from "../components/common/Layout";
 import MainVisual from "../components/top/mainVisual";
 import About from "../components/top/about";
@@ -9,42 +7,10 @@ import Review from "../components/top/review";
 import Blog from "../components/top/blog";
 import Access from "../components/top/access";
 import Contact from "../components/top/contact";
+import { getAllPostsForHome } from "../../lib/api";
 
 export const getStaticProps = async () => {
-  const { data } = await client.query({
-    query: gql`
-      query AllQuery {
-        reviews {
-          nodes {
-            reviews {
-              name
-              reviewerImg {
-                sourceUrl
-              }
-              reviewTitle
-            }
-            id
-            slug
-            title
-          }
-        }
-        blogs {
-          nodes {
-            date
-            featuredImage {
-              node {
-                sourceUrl
-              }
-            }
-            title
-            slug
-            id
-            content
-          }
-        }
-      }
-    `
-  });
+  const { data } = await getAllPostsForHome();
 
   return {
     props: {

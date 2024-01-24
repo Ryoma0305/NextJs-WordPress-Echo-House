@@ -1,31 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
-import { client } from "../../../lid/apollo";
+import { client } from "../../../lib/apollo";
 import { gql } from "@apollo/client";
 import { formatJapaneseDate } from "../../utils/formatDate";
 import Layout from "../../components/common/Layout";
+import { getBlogPosts } from "../../../lib/api";
 
 export const getStaticProps = async () => {
-  const { data } = await client.query({
-    query: gql`
-      query blogsQuery {
-        blogs(first: 50) {
-          nodes {
-            date
-            featuredImage {
-              node {
-                sourceUrl
-              }
-            }
-            title
-            slug
-            id
-            content
-          }
-        }
-      }
-    `
-  });
+  const { data } = await getBlogPosts();
 
   return {
     props: {

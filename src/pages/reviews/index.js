@@ -1,30 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
-import { client } from "../../../lid/apollo";
-import { gql } from "@apollo/client";
 import Layout from "../../components/common/Layout";
+import { getReviewPosts } from "../../../lib/api";
 
 export const getStaticProps = async () => {
-  const { data } = await client.query({
-    query: gql`
-      query reviewsQuery {
-        reviews(first: 50) {
-          nodes {
-            reviews {
-              name
-              reviewerImg {
-                sourceUrl
-              }
-              reviewTitle
-            }
-            id
-            slug
-            title
-          }
-        }
-      }
-    `
-  });
+  const { data } = await getReviewPosts();
 
   return {
     props: {

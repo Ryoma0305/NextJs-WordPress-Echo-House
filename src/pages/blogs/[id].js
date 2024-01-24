@@ -1,21 +1,11 @@
-import { gql } from "@apollo/client";
-import { client } from "../../../lid/apollo";
 import { formatJapaneseDate } from "../../utils/formatDate";
 import Button from "../../components/common/button";
 import Layout from "../../components/common/Layout";
+import { getBlogPost } from "../../../lib/api";
+import { getBlogPostsWithId } from "../../../lib/api";
 
 export const getStaticPaths = async () => {
-  const { data } = await client.query({
-    query: gql`
-      query reviewsQuery {
-        blogs {
-          nodes {
-            id
-          }
-        }
-      }
-    `
-  });
+  const { data } = await getBlogPostsWithId();
 
   const ids = data.blogs.nodes.map((blog) => ({ params: { id: blog.id } }));
 
@@ -26,26 +16,7 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params }) => {
-  const { data } = await client.query({
-    query: gql`
-      query GetBlogById($id: ID!) {
-        blogBy(id: $id) {
-          date
-          featuredImage {
-            node {
-              sourceUrl
-            }
-          }
-          id
-          title
-          content
-        }
-      }
-    `,
-    variables: {
-      id: params.id
-    }
-  });
+  const { data } = await getBlogPost(params);
 
   return {
     props: {
