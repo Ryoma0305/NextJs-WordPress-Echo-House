@@ -22,7 +22,7 @@ const sns = [
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-300 py-16 md:py-24">
+    <footer className="bg-gray-300 px-8 py-16 md:py-24">
       <div className="mx-auto max-w-[1200px]">
         <div className="md:flex md:justify-between">
           <p className="flex flex-col items-center text-xs md:text-base">
