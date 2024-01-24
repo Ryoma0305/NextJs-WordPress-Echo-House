@@ -1,11 +1,11 @@
 import Image from "next/image";
 import ReviewInfo from "../../components/reviews/ReviewInfo";
-
 import { formatJapaneseDate } from "../../utils/formatDate";
 import Layout from "../../components/common/Layout";
 import { getReviewPost } from "../../../lib/api";
 import { getReviewPostsWithSlug } from "../../../lib/api";
 import ReviewImages from "../../components/reviews/ReviewImages";
+import Button from "../../components/common/Button";
 
 export const getStaticPaths = async () => {
   const { data } = await getReviewPostsWithSlug();
@@ -74,6 +74,10 @@ const Review = ({ review }) => {
           {(review.reviews.reviewImg1 || review.reviews.reviewImg2 || review.reviews.reviewImg3) && (
             <ReviewImages image1={review.reviews.reviewImg1?.sourceUrl} image2={review.reviews.reviewImg2?.sourceUrl} image3={review.reviews.reviewImg3?.sourceUrl} />
           )}
+
+          <div className="mt-16">
+            <Button title="Review一覧へ" href="/reviews/" />
+          </div>
         </div>
       </section>
     </Layout>
