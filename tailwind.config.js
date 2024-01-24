@@ -25,7 +25,8 @@ module.exports = {
         "gradient-pink": "linear-gradient(to right, #ffdde1, #ee9ca7)",
         "gradient-right-pink": "linear-gradient(to top, #feada6 0%, #f5efef 80%)",
         "gradient-green": "linear-gradient(-225deg, #B7F8DB 0%, #50A7C2 100%)",
-        "about-bg": "linear-gradient(90deg, #fff 5%, rgba(255, 255, 255, 0.6))"
+        about: "linear-gradient(90deg, #fff 5%, rgba(255, 255, 255, 0.6))",
+        contact: "linear-gradient(-225deg, #B7F8DB 0%, #50A7C2 100%)"
       },
       animation: {
         "fade-in-bottom": "fade-in-bottom 0.6s ease-out both",
