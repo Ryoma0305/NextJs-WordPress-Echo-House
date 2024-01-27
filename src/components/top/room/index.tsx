@@ -1,10 +1,10 @@
 import Image from "next/image";
-import RoomSlider from "./RoomSlider";
+import RoomSlider from "./roomSlider";
 import SectionHeading from "../../common/SectionHeading";
-import FacilitySlider from "./FacilitySlider";
-import AreaSlider from "./AreaSlider";
-import Button from "../../../components/common/Button";
-import { FadeInBottom } from "../../../components/common/FadeInBottom";
+import FacilitySlider from "./facilitySlider";
+import AreaSlider from "./areaSlider";
+import Button from "../../common/Button";
+import { FadeInBottom } from "../../common/FadeInBottom";
 
 const rooms = [
   {
@@ -12,7 +12,6 @@ const rooms = [
     area: "専有面積 / 7.5㎡",
     text: "賃料（共益費等込み）",
     slides: {
-      thumbs: "true",
       images: [
         { image: "/images/ps1.jpg", alt: "" },
         { image: "/images/ps2.jpg", alt: "" },
@@ -45,7 +44,6 @@ const rooms = [
     area: "専有面積 / 14.4㎡",
     text: "賃料（共益費等込み）",
     slides: {
-      thumbs: "true",
       images: [
         { image: "/images/ad1.jpg", alt: "" },
         { image: "/images/ad2.jpg", alt: "" },
@@ -150,7 +148,7 @@ const Room = () => {
           {rooms.map((item, index) => (
             <div className="md:grid md:grid-cols-2" key={index}>
               <div className="pb-8">
-                <RoomSlider props={item.slides} />
+                {/* <RoomSlider props={item.slides} /> */}
               </div>
               <div className="px-4 pb-16">
                 {item.name && <h3 className="text-xl font-bold md:text-2xl">{item.name}</h3>}
@@ -200,7 +198,7 @@ const Room = () => {
               </div>
             </div>
           ))}
-          <div className="area">
+          <div>
             {areas.map((item, index) => (
               <AreaSlider props={item.slides} key={index} />
             ))}
@@ -208,9 +206,9 @@ const Room = () => {
             <p className="mt-8 inline-block bg-gradient-green px-4 py-3 text-white-100">3Dビュー探索</p>
             <ul className="mt-8 flex flex-col items-center md:flex-row md:flex-wrap md:items-start md:gap-4">
               {views.map((item, index) => (
-                <li className="d-list-img relative rounded-md border border-gray-300 md:w-[48%]" key={index}>
-                  <iframe className="w-full" src={item.iframe} width="400" height="300" frameBorder="0" style={{ border: 0 }} allowFullScreen="" aria-hidden="false" tabIndex="0"></iframe>
-                  <p className="hover-mask-text mt-4 border-t border-gray-300 p-2">{item.text}</p>
+                <li className="relative rounded-md border border-gray-300 md:w-[48%]" key={index}>
+                  <iframe className="w-full" src={item.iframe} width="400" height="300" frameBorder="0" style={{ border: 0 }} allowFullScreen={true} aria-hidden="false" tabIndex={0}></iframe>
+                  <p className="mt-4 border-t border-gray-300 p-2">{item.text}</p>
                 </li>
               ))}
             </ul>

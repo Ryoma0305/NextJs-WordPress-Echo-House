@@ -1,5 +1,7 @@
-import { FadeInBottom } from "../../../components/common/FadeInBottom";
-import SectionHeading from "../../../components/common/SectionHeading";
+
+import { FadeInBottom } from "@/components/common/FadeInBottom";
+import SectionHeading from "@/components/common/SectionHeading";
+
 
 const About = () => {
   return (

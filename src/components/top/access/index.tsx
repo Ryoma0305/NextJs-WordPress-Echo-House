@@ -1,5 +1,5 @@
-import { FadeInBottom } from "../../../components/common/FadeInBottom";
-import SectionHeading from "../../../components/common/SectionHeading";
+import { FadeInBottom } from "../../common/FadeInBottom";
+import SectionHeading from "../../common/SectionHeading";
 
 const Access = () => {
   return (
@@ -21,7 +21,7 @@ const Access = () => {
                 width="600"
                 height="450"
                 style={{ border: 0 }}
-                allowFullScreen=""
+                allowFullScreen={true}
                 referrerPolicy="no-referrer-when-downgrade"
                 className="w-full"
               ></iframe>

@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import SectionHeading from "../../common/SectionHeading";
-import Button from "../../../components/common/Button";
+import Button from "../../common/Button";
 import { truncateText } from "../../../utils/truncateText";
 import { formatJapaneseDate } from "../../../utils/formatDate";
-import { FadeInBottom } from "../../../components/common/FadeInBottom";
+import { FadeInBottom } from "../../common/FadeInBottom";
 
-const Blog = ({ blogs }) => {
+const Blog = ({ blogs }: { blogs: Array<any> }) => {
   return (
     <FadeInBottom>
       <section className="bg-white-200 px-4 py-16" id="blog">

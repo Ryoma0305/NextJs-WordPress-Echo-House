@@ -3,6 +3,19 @@ import Image from "next/image";
 import Layout from "../../components/common/Layout";
 import { getReviewPosts } from "../../../lib/api";
 
+interface ReviewsType {
+  id: string;
+  slug: string;
+  title: string;
+  reviews: {
+    name: string;
+    reviewerImg: {
+      sourceUrl: string;
+    };
+    reviewTitle: string;
+  };
+}
+
 export const getStaticProps = async () => {
   const { data } = await getReviewPosts();
 
@@ -13,7 +26,7 @@ export const getStaticProps = async () => {
   };
 };
 
-export default function reviews({ reviews }) {
+export default function reviews({ reviews }: { reviews: ReviewsType[] }) {
   return (
     <Layout>
       <div className="flex h-40 items-center justify-center bg-slate-800 md:h-80">

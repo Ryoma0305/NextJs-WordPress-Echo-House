@@ -1,9 +1,10 @@
 import SectionHeading from "../../common/SectionHeading";
 import ReviewSlider from "./ReviewSlider";
-import Button from "../../../components/common/Button";
-import { FadeInBottom } from "../../../components/common/FadeInBottom";
+import Button from "../../common/Button";
+import { FadeInBottom } from "../../common/FadeInBottom";
 
-const Review = ({ reviews }) => {
+
+const Review = ({ reviews }: { reviews: Array<any> }) => {
   return (
     <FadeInBottom>
       <section className="bg-white-200 py-16" id="review">

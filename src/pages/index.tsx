@@ -9,6 +9,32 @@ import Access from "../components/top/access";
 import Contact from "../components/top/contact";
 import { getAllPostsForHome } from "../../lib/api";
 
+type BlogType = {
+  date: string;
+  featuredImage: {
+    node: {
+      sourceUrl: string;
+    };
+  };
+  title: string;
+  slug: string;
+  id: string;
+  content: string;
+};
+
+type ReviewType = {
+  reviews: {
+    name: string;
+    reviewerImg: {
+      sourceUrl: string;
+    };
+    reviewTitle: string;
+  };
+  id: string;
+  slug: string;
+  title: string;
+};
+
 export const getStaticProps = async () => {
   const { data } = await getAllPostsForHome();
 
@@ -20,7 +46,7 @@ export const getStaticProps = async () => {
   };
 };
 
-export default function Home({ blogs, reviews }) {
+export default function Home({ blogs, reviews }: { blogs: BlogType[]; reviews: ReviewType[] }) {
   return (
     <Layout>
       <MainVisual />

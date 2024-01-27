@@ -1,10 +1,21 @@
 import Link from "next/link";
 import Image from "next/image";
-import { client } from "../../../lib/apollo";
-import { gql } from "@apollo/client";
 import { formatJapaneseDate } from "../../utils/formatDate";
 import Layout from "../../components/common/Layout";
 import { getBlogPosts } from "../../../lib/api";
+
+type BlogsType = {
+  date: string;
+  featuredImage: {
+    node: {
+      sourceUrl: string;
+    };
+  };
+  title: string;
+  slug: string;
+  id: string;
+  content: string;
+};
 
 export const getStaticProps = async () => {
   const { data } = await getBlogPosts();
@@ -16,7 +27,7 @@ export const getStaticProps = async () => {
   };
 };
 
-export default function blogs({ blogs }) {
+export default function blogs({ blogs }: { blogs: BlogsType[] }) {
   return (
     <Layout>
       <div className="flex h-40 items-center justify-center bg-slate-800 md:h-80">
