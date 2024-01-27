@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const useScrollActivator = (top) => {
+const useScrollActivator = (top: number) => {
   const [isActive, setIsActive] = useState(false);
 
   const scrollHandler = () => {
@@ -17,7 +17,7 @@ const useScrollActivator = (top) => {
     return () => {
       window.removeEventListener("scroll", scrollHandler);
     };
-  }, []);
+  });
 
   return isActive;
 };

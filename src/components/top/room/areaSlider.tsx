@@ -8,17 +8,7 @@ import { FreeMode, Navigation } from "swiper/modules";
 import Image from "next/image";
 // import Modal from "../../../components/common/modal";
 
-const AreaSlider = ({ props }) => {
-  const [modalImage, setModalImage] = useState(null);
-
-  const openModal = (image) => {
-    setModalImage(image);
-  };
-
-  const closeModal = () => {
-    setModalImage(null);
-  };
-
+const AreaSlider = ({ props }: { props: { images: Array<{ image: string, alt: string }> } }) => {
   return (
     <div className="pb-8">
       <Swiper
@@ -34,12 +24,11 @@ const AreaSlider = ({ props }) => {
         modules={[FreeMode, Navigation]}
       >
         {props.images.map((item, index) => (
-          <SwiperSlide key={index} onClick={() => openModal(item.image)}>
+          <SwiperSlide key={index}>
             <Image src={item.image} width="202" height="91" alt={item.alt} className="w-full" />
           </SwiperSlide>
         ))}
       </Swiper>
-      {/* <Modal modalImage={modalImage} closeModal={closeModal} /> */}
     </div>
   );
 };

@@ -81,7 +81,7 @@ export async function getReviewPostsWithSlug() {
   return data;
 }
 
-export async function getReviewPost(params) {
+export async function getReviewPost(params: { slug: string }) {
   const data = await client.query({
     query: gql`
       query GetReviewBySlug($slug: String!) {
@@ -171,7 +171,7 @@ export async function getBlogPostsWithId() {
   return data;
 }
 
-export async function getBlogPost(params) {
+export async function getBlogPost(params: { id: string }) {
   const data = await client.query({
     query: gql`
       query GetBlogById($id: ID!) {

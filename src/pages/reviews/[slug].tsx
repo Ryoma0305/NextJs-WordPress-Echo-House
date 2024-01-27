@@ -1,24 +1,59 @@
 import Image from "next/image";
-import ReviewInfo from "../../components/reviews/ReviewInfo";
 import { formatJapaneseDate } from "../../utils/formatDate";
 import Layout from "../../components/common/Layout";
 import { getReviewPost } from "../../../lib/api";
 import { getReviewPostsWithSlug } from "../../../lib/api";
-import ReviewImages from "../../components/reviews/ReviewImages";
 import Button from "../../components/common/Button";
+import ReviewInfo from "@/components/reviews/reviewInfo";
+import ReviewImages from "@/components/reviews/reviewImages";
+
+type ReviewType = {
+  reviews: {
+    staffRating: number;
+    atmosphereRating: number;
+    cleanlinessRating: number;
+    locationRating: number;
+    priceRating: number;
+    age: number;
+    atmosphereImpression: string;
+    cleanlinessImpression: string;
+    country: string;
+    impression: string;
+    locationImpression: string;
+    name: string;
+    priceImpression: string;
+    reviewImg1?: {
+      sourceUrl: string;
+    };
+    reviewImg2?: {
+      sourceUrl: string;
+    };
+    reviewImg3?: {
+      sourceUrl: string;
+    };
+    reviewerImg: {
+      sourceUrl: string;
+    };
+    reviewTitle: string;
+    staffImpression: string;
+    staffMessage?: string;
+  };
+  slug: string;
+  title: string;
+  date: string;
+};
 
 export const getStaticPaths = async () => {
   const { data } = await getReviewPostsWithSlug();
 
-  const slugs = data.reviews.nodes.map((review) => ({ params: { slug: review.slug } }));
-
+  const slugs = data.reviews.nodes.map((review: { slug: string }) => ({ params: { slug: review.slug } }));
   return {
     paths: slugs,
     fallback: false
   };
 };
 
-export const getStaticProps = async ({ params }) => {
+export const getStaticProps = async ({ params }: { params: { slug: string } }) => {
   const { data } = await getReviewPost(params);
 
   return {
@@ -28,7 +63,7 @@ export const getStaticProps = async ({ params }) => {
   };
 };
 
-const Review = ({ review }) => {
+const Review = ({ review }: { review: ReviewType }) => {
   const totalScore = (review.reviews.staffRating + review.reviews.atmosphereRating + review.reviews.cleanlinessRating + review.reviews.locationRating + review.reviews.priceRating) / 5;
   return (
     <Layout>

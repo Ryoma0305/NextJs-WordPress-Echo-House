@@ -1,6 +1,10 @@
 import React from "react";
 import { useInView } from "react-intersection-observer";
 
+type Props = {
+  children: React.ReactNode;
+};
+
 /**
  * 子要素を下からフェードインさせる
  *
@@ -11,7 +15,7 @@ import { useInView } from "react-intersection-observer";
  * </FadeInBottom>
  * ```
  */
-export const FadeInBottom = ({ children }) => {
+export const FadeInBottom: React.FC<Props> = ({ children }) => {
   const { ref, inView } = useInView({
     // ref要素が現れてから50px過ぎたら
     rootMargin: "-50px",
@@ -21,11 +25,11 @@ export const FadeInBottom = ({ children }) => {
 
   const fadeInClassName = inView ? "animate-fade-in-bottom" : "opacity-0";
 
-  const wrappedChildren = React.Children.map(children, (child) => {
+  const wrappedChildren = React.Children.map(children, child => {
     if (React.isValidElement(child)) {
       const className = [child.props.className, fadeInClassName].filter((el) => el).join(" ");
 
-      return React.cloneElement(child, {
+      return React.cloneElement(child as React.ReactElement, {
         ref,
         className
       });

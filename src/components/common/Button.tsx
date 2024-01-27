@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const Button = ({ title, href, target = "" }) => {
+const Button = ({ title, href, target = "_self" }: { title: string, href: string, target?: string }) => {
   return (
     <p className="flex justify-center">
       <Link

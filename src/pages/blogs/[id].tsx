@@ -4,10 +4,22 @@ import Layout from "../../components/common/Layout";
 import { getBlogPost } from "../../../lib/api";
 import { getBlogPostsWithId } from "../../../lib/api";
 
+type BlogType = {
+  date: string;
+  featuredImage: {
+    node: {
+      sourceUrl: string;
+    };
+  };
+  id: string;
+  title: string;
+  content: string;
+};
+
 export const getStaticPaths = async () => {
   const { data } = await getBlogPostsWithId();
 
-  const ids = data.blogs.nodes.map((blog) => ({ params: { id: blog.id } }));
+  const ids = data.blogs.nodes.map((blog: { id: string }) => ({ params: { id: blog.id } }));
 
   return {
     paths: ids,
@@ -15,7 +27,7 @@ export const getStaticPaths = async () => {
   };
 };
 
-export const getStaticProps = async ({ params }) => {
+export const getStaticProps = async ({ params }: { params: { id: string } }) => {
   const { data } = await getBlogPost(params);
 
   return {
@@ -25,7 +37,7 @@ export const getStaticProps = async ({ params }) => {
   };
 };
 
-const Blog = ({ blog }) => {
+const Blog = ({ blog }: { blog: BlogType }) => {
   return (
     <Layout>
       <div className="flex h-40 items-center justify-center bg-slate-800 md:h-80">

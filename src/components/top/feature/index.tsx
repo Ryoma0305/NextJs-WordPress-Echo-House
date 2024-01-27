@@ -1,5 +1,5 @@
-import { FadeInBottom } from "../../../components/common/FadeInBottom";
-import SectionHeading from "../../../components/common/SectionHeading";
+import { FadeInBottom } from "../../common/FadeInBottom";
+import SectionHeading from "../../common/SectionHeading";
 import Image from "next/image";
 
 const lists = [
@@ -31,22 +31,22 @@ const lists = [
 const Feature = () => {
   return (
     <FadeInBottom>
-      <section className="feature section-padding bg-white-200 px-4 py-16" id="feature">
+      <section className="bg-white-200 px-4 py-16" id="feature">
         <div className="mx-auto max-w-[1284px]">
           <SectionHeading titleJp="エコーハウスの特徴" titleEn="Feature" />
-          <ul className="feature-listwrap flex flex-col gap-16 md:flex-row md:flex-wrap md:justify-center md:gap-x-4">
+          <ul className="flex flex-col gap-16 md:flex-row md:flex-wrap md:justify-center md:gap-x-4">
             {lists.map((item) => (
-              <li className="feature-list flex flex-col items-center md:w-[30%] md:px-10" key={item.titleEn}>
-                <p className="feature-list-icon">
+              <li className="flex flex-col items-center md:w-[30%] md:px-10" key={item.titleEn}>
+                <p>
                   <Image src={item.image} alt={item.alt} width="60" height="60" />
                 </p>
-                <div className="feature-list-titlewrap mt-2 flex justify-center text-center md:items-center">
-                  <p className="feature-list-title-text mt-3 flex flex-col items-center text-center">
+                <div className="mt-2 flex justify-center text-center md:items-center">
+                  <p className="mt-3 flex flex-col items-center text-center">
                     <span className="text-xl font-bold">{item.titleJp}</span>
-                    <span className="feature-list-title-sub font-accent text-xs">{item.titleEn}</span>
+                    <span className="font-accent text-xs">{item.titleEn}</span>
                   </p>
                 </div>
-                <p className="feature-list-text mt-4 text-center">{item.text}</p>
+                <p className="mt-4 text-center">{item.text}</p>
               </li>
             ))}
           </ul>

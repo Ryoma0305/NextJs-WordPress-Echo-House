@@ -1,10 +1,10 @@
 import { FaStar } from "react-icons/fa";
 
-function convertToStars(num) {
+function convertToStars(num: number) {
   return Array.from({ length: num }, (_, index) => <FaStar key={index} />);
 }
 
-const ReviewInfo = ({ title, rating, impression }) => {
+const ReviewInfo = ({ title, rating, impression }: { title?: string; rating?: number; impression?: string }) => {
   return (
     <div className="md:mx-auto md:w-1/2">
       {title && <h3 className="inline-block rounded-t-md bg-slate-800  px-4 font-bold text-white-100">{title}</h3>}

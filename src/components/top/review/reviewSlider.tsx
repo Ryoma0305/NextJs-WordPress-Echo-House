@@ -7,7 +7,7 @@ import { Autoplay } from "swiper/modules";
 import Image from "next/image";
 import Link from "next/link";
 
-const ReviewSlider = ({ reviews }) => {
+const ReviewSlider = ({ reviews }: { reviews: Array<any> }) => {
   return (
     <div className="mt-8">
       <Swiper

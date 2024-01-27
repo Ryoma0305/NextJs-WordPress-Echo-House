@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const ReviewImages = ({ image1, image2, image3 }) => {
+const ReviewImages = ({ image1, image2, image3 }: { image1?: string; image2?: string; image3?: string }) => {
   return (
     <div>
       <div className="flex flex-col items-center gap-4 md:grid md:grid-cols-3 md:flex-wrap">
