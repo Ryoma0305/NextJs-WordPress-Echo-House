@@ -1,8 +1,8 @@
 import SectionHeading from "../../common/SectionHeading";
-import ReviewSlider from "./ReviewSlider";
+import ReviewSlider from "./reviewSlider";
 import Button from "../../common/Button";
 import { FadeInBottom } from "../../common/FadeInBottom";
-
+import React from "react";
 
 const Review = ({ reviews }: { reviews: Array<any> }) => {
   return (
