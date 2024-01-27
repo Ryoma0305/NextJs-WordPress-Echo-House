@@ -148,7 +148,7 @@ const Room = () => {
           {rooms.map((item, index) => (
             <div className="md:grid md:grid-cols-2" key={index}>
               <div className="pb-8">
-                {/* <RoomSlider props={item.slides} /> */}
+                <RoomSlider slides={item.slides} />
               </div>
               <div className="px-4 pb-16">
                 {item.name && <h3 className="text-xl font-bold md:text-2xl">{item.name}</h3>}

@@ -7,13 +7,21 @@ import "swiper/css/thumbs";
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 import Image from "next/image";
 
+type Slides = {
+  slides: {
+    images: {
+      image: string;
+      alt: string;
+    }[];
+  };
+};
 
-const RoomSlider = (props) => {
+const RoomSlider = (slides: Slides) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   return (
     <div className="pb-8">
       <Swiper spaceBetween={10} navigation={true} thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }} modules={[FreeMode, Navigation, Thumbs]}>
-        {props.images.map((item, index) => (
+        {slides.slides.images.map((item, index) => (
           <SwiperSlide key={index}>
             <Image src={item.image} width="431" height="324" alt={item.alt} className="w-full" />
           </SwiperSlide>
@@ -21,7 +29,7 @@ const RoomSlider = (props) => {
       </Swiper>
 
       <Swiper onSwiper={setThumbsSwiper} spaceBetween={2} slidesPerView={4} freeMode={true} watchSlidesProgress={true} modules={[FreeMode, Navigation, Thumbs]}>
-        {props.images.map((item, index) => (
+        {slides.slides.images.map((item, index) => (
           <SwiperSlide key={index}>
             <Image src={item.image} width="108" height="81" alt={item.alt} className="w-full" />
           </SwiperSlide>
