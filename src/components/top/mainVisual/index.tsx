@@ -42,7 +42,7 @@ const MainVisual = () => {
         <h1>
           <Image src="/images/main-logo.png" width="368" height="103" alt="女性専用シェアハウス Echo House" className="" />
         </h1>
-        <ul className="flex justify-center gap-3">
+        {/* <ul className="flex justify-center gap-3">
           <li>
             <Link href="/" className="flex h-8 w-24 items-center justify-center rounded-full bg-gradient-green text-sm font-bold text-white-100">
               日本語
@@ -53,7 +53,7 @@ const MainVisual = () => {
               English
             </Link>
           </li>
-        </ul>
+        </ul> */}
       </div>
       <div className="absolute bottom-8 left-[45%] md:left-[49%]">
         <Link href="#about">
