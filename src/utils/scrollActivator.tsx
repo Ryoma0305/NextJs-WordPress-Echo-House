@@ -17,7 +17,7 @@ const useScrollActivator = (top: number) => {
     return () => {
       window.removeEventListener("scroll", scrollHandler);
     };
-  }, []);
+  });
 
   return isActive;
 };
