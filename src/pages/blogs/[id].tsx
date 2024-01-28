@@ -3,6 +3,7 @@ import Button from "../../components/common/Button";
 import Layout from "../../components/common/Layout";
 import { getBlogPost } from "../../../lib/api";
 import { getBlogPostsWithId } from "../../../lib/api";
+import React from "react";
 
 type BlogType = {
   date: string;

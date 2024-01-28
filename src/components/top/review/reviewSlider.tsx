@@ -6,6 +6,7 @@ import "swiper/css/thumbs";
 import { Autoplay } from "swiper/modules";
 import Image from "next/image";
 import Link from "next/link";
+import React from "react";
 
 const ReviewSlider = ({ reviews }: { reviews: Array<any> }) => {
   return (

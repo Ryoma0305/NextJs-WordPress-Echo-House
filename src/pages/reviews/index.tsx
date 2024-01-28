@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Layout from "../../components/common/Layout";
 import { getReviewPosts } from "../../../lib/api";
+import React from "react";
 
 interface ReviewsType {
   id: string;

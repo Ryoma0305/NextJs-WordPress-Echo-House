@@ -4,6 +4,7 @@ import "swiper/css/effect-fade";
 import { Autoplay, EffectFade } from "swiper/modules";
 import Image from "next/image";
 import Link from "next/link";
+import React from "react";
 
 const slides = [
   { image: "/images/main-bg1.jpg", alt: "" },

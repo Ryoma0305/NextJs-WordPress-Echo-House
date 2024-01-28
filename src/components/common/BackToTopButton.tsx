@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import useScrollActivator from "../../utils/scrollActivator";
+import React from "react";
 
 const BackToTopButton = () => {
   const isScrolled = useScrollActivator(100);

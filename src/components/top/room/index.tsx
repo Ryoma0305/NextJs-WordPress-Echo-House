@@ -5,6 +5,7 @@ import FacilitySlider from "./facilitySlider";
 import AreaSlider from "./areaSlider";
 import Button from "../../common/Button";
 import { FadeInBottom } from "../../common/FadeInBottom";
+import React from "react";
 
 const rooms = [
   {

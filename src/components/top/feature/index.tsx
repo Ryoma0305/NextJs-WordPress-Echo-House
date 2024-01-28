@@ -1,3 +1,4 @@
+import React from "react";
 import { FadeInBottom } from "../../common/FadeInBottom";
 import SectionHeading from "../../common/SectionHeading";
 import Image from "next/image";

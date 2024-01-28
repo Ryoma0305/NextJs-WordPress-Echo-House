@@ -6,9 +6,10 @@ import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import { FreeMode, Navigation } from "swiper/modules";
 import Image from "next/image";
+import React from "react";
 // import Modal from "../../../components/common/modal";
 
-const AreaSlider = ({ props }: { props: { images: Array<{ image: string, alt: string }> } }) => {
+const AreaSlider = ({ props }: { props: { images: Array<{ image: string; alt: string }> } }) => {
   return (
     <div className="pb-8">
       <Swiper

@@ -2,6 +2,7 @@ import { FC } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { ContactSchema, ContactType } from "../../schema/contact";
+import React from "react";
 
 interface ContactFormProps {}
 

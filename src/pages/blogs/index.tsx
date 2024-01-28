@@ -3,6 +3,7 @@ import Image from "next/image";
 import { formatJapaneseDate } from "../../utils/formatDate";
 import Layout from "../../components/common/Layout";
 import { getBlogPosts } from "../../../lib/api";
+import React from "react";
 
 type BlogsType = {
   date: string;

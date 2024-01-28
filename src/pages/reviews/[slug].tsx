@@ -6,6 +6,7 @@ import { getReviewPostsWithSlug } from "../../../lib/api";
 import Button from "../../components/common/Button";
 import ReviewInfo from "@/components/reviews/reviewInfo";
 import ReviewImages from "@/components/reviews/reviewImages";
+import React from "react";
 
 type ReviewType = {
   reviews: {

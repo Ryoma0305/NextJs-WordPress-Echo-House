@@ -3,6 +3,7 @@ import Link from "next/link";
 import clsx from "clsx";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 import useScrollActivator from "../../utils/scrollActivator";
+import React from "react";
 
 const navigation = [
   { name: "top", href: "/" },

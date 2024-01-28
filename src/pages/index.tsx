@@ -8,6 +8,7 @@ import Blog from "../components/top/blog";
 import Access from "../components/top/access";
 import Contact from "../components/top/contact";
 import { getAllPostsForHome } from "../../lib/api";
+import React from "react";
 
 type BlogType = {
   date: string;

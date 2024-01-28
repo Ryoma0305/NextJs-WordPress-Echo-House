@@ -1,4 +1,6 @@
-const SectionHeading = ({ titleJp, titleEn }: { titleJp: string, titleEn: string }) => {
+import React from "react";
+
+const SectionHeading = ({ titleJp, titleEn }: { titleJp: string; titleEn: string }) => {
   return (
     <div className="flex justify-center">
       <h2 className="relative inline-flex flex-col justify-center pb-8 text-center">
