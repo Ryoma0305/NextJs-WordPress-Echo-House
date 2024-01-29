@@ -205,9 +205,9 @@ const Room = () => {
             ))}
 
             <p className="mt-8 inline-block bg-gradient-green px-4 py-3 text-white-100">3Dビュー探索</p>
-            <ul className="mt-8 flex flex-col items-center md:flex-row md:flex-wrap md:items-start md:gap-4">
+            <ul className="mt-8 flex flex-col items-center px-4 md:flex-row md:flex-wrap md:items-start md:gap-4 md:px-0">
               {views.map((item, index) => (
-                <li className="relative rounded-md border border-gray-300 md:w-[48%]" key={index}>
+                <li className="relative w-full rounded-md border border-gray-300 md:w-[48%]" key={index}>
                   <iframe className="w-full" src={item.iframe} width="400" height="300" frameBorder="0" style={{ border: 0 }} allowFullScreen={true} aria-hidden="false" tabIndex={0}></iframe>
                   <p className="mt-4 border-t border-gray-300 p-2">{item.text}</p>
                 </li>
