@@ -1,4 +1,5 @@
 import Image from "next/image";
+import React from "react";
 
 const Modal = ({ modalImage, closeModal }) => {
   return (
