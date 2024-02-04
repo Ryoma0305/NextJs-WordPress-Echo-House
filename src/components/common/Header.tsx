@@ -64,7 +64,7 @@ export default function Header() {
           <ul className="flex list-none flex-col items-center gap-4">
             {navigation.map((item) => (
               <li key={item.name}>
-                <Link href={item.href} className="text-xl uppercase">
+                <Link href={item.href} className="text-xl uppercase" onClick={toggleFunction}>
                   {item.name}
                 </Link>
               </li>
