@@ -1,22 +1,20 @@
-import { FadeInBottom } from "@/components/common/FadeInBottom";
-import SectionHeading from "@/components/common/SectionHeading";
+import { useRouter } from "next/router";
+import en from "../../../locals/top/about/en";
+import ja from "../../../locals/top/about/ja";
 import React from "react";
+import { FadeInBottom } from "../../common/FadeInBottom";
+import SectionHeading from "../../common/SectionHeading";
 
 const About = () => {
+  const { locale } = useRouter();
+  const t = locale === "en" ? en : ja;
+
   return (
     <FadeInBottom>
       <section className="relative bg-[url('/images/1floor-6.jpg')] bg-cover bg-center bg-no-repeat px-4 py-16 before:absolute before:inset-0 before:bg-about" id="about">
         <div className="relative">
-          <SectionHeading titleJp="コンセプト" titleEn="About us" />
-          <p className="text-center leading-loose">
-            エコーハウスは新今宮駅まで徒歩5分、通天閣、新世界まで徒歩7分、と大阪の中心地に位置し、
-            <br />
-            2018年にリニューアルオープンした女性専用シェアハウスです。
-            <br />
-            私達は、国籍やバックグラウンドが異なる住民の方々誰もが快適に過ごせるよう努め、
-            <br />
-            エコーハウスを選んで良かったと言ってもらえるようなサービスを提供していきたいと思っています。
-          </p>
+          <SectionHeading titleJp={t.title} titleEn={t.titleSub} />
+          <p className="text-center leading-loose" dangerouslySetInnerHTML={{ __html: t.text }} />
         </div>
       </section>
     </FadeInBottom>
