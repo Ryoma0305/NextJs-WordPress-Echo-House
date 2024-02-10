@@ -5,25 +5,25 @@ import { FaFacebook, FaInstagram } from "react-icons/fa";
 import useScrollActivator from "../../utils/scrollActivator";
 import React from "react";
 
-const navigation = [
-  { name: "top", href: "/" },
-  { name: "about", href: "/#about" },
-  { name: "room", href: "/#room" },
-  { name: "review", href: "/reviews/" },
-  { name: "blog", href: "/blogs/" },
-  { name: "access", href: "/#access" }
-];
-
-const sns = [
-  { name: "instagram", href: "https://www.instagram.com/echofee_osaka/", content: <FaInstagram /> },
-  {
-    name: "facebook",
-    href: "https://www.facebook.com/ECHO-HOUSE-324063728318655/?modal=admin_todo_tour",
-    content: <FaFacebook />
-  }
-];
-
 export default function Header() {
+  const navigation = [
+    { name: "top", href: "/" },
+    { name: "about", href: "/#about" },
+    { name: "room", href: "/#room" },
+    { name: "review", href: "/reviews/" },
+    { name: "blog", href: "/blogs/" },
+    { name: "access", href: "/#access" }
+  ];
+
+  const sns = [
+    { name: "instagram", href: "https://www.instagram.com/echofee_osaka/", content: <FaInstagram /> },
+    {
+      name: "facebook",
+      href: "https://www.facebook.com/ECHO-HOUSE-324063728318655/?modal=admin_todo_tour",
+      content: <FaFacebook />
+    }
+  ];
+
   const isScrolled = useScrollActivator(100);
 
   const [isOpen, setIsOpen] = useState(false);

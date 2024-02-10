@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 import Link from "next/link";
 import SectionHeading from "../../common/SectionHeading";
 import Button from "../../common/Button";
@@ -8,6 +9,8 @@ import { FadeInBottom } from "../../common/FadeInBottom";
 import React from "react";
 
 const Blog = ({ blogs }: { blogs: Array<any> }) => {
+  const { locale } = useRouter();
+
   return (
     <FadeInBottom>
       <section className="bg-white-200 px-4 py-16" id="blog">
@@ -25,7 +28,7 @@ const Blog = ({ blogs }: { blogs: Array<any> }) => {
               </time>
               <div className="order-4" dangerouslySetInnerHTML={{ __html: truncateText(item.content, 100) }} />
               <p className="order-1 md:h-[16rem]">
-                <Image src={item.featuredImage.node.sourceUrl} width="308" height="185" alt="" className="h-full w-full object-cover" />
+                <img src={item.featuredImage.node.sourceUrl} width="308" height="185" alt="" className="h-full w-full object-cover" />
               </p>
             </li>
           ))}

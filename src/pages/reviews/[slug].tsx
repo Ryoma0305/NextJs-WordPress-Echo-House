@@ -75,7 +75,7 @@ const Review = ({ review }: { review: ReviewType }) => {
         <div className="mx-auto flex max-w-[1200px] flex-col gap-8">
           <div className="flex flex-col items-center gap-2">
             <p className="">
-              <Image src={review.reviews.reviewerImg.sourceUrl} width="73" height="73" alt="" />
+              <img src={review.reviews.reviewerImg.sourceUrl} width="73" height="73" alt="" />
             </p>
             <div className="flex flex-col gap-2">
               <p className="border-b border-black">{`Name : ${review.reviews.name}`}</p>
