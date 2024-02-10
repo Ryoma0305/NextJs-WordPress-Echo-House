@@ -25,7 +25,7 @@ const Blog = ({ blogs }: { blogs: Array<any> }) => {
               </time>
               <div className="order-4" dangerouslySetInnerHTML={{ __html: truncateText(item.content, 100) }} />
               <p className="order-1 md:h-[16rem]">
-                <Image src={item.featuredImage.node.sourceUrl} width="308" height="185" alt="" className="h-full w-full object-cover" />
+                <img src={item.featuredImage.node.sourceUrl} width="308" height="185" alt="" className="h-full w-full object-cover" />
               </p>
             </li>
           ))}

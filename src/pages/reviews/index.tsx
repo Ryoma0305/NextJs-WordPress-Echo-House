@@ -44,7 +44,7 @@ export default function reviews({ reviews }: { reviews: ReviewsType[] }) {
                     <p className="text-center text-sm md:text-base">{item.reviews.reviewTitle}</p>
                   </div>
                   <p className="order-1 flex justify-center">
-                    <Image src={item.reviews.reviewerImg?.sourceUrl} width="72" height="72" alt="" />
+                    <img src={item.reviews.reviewerImg?.sourceUrl} width="72" height="72" alt="" />
                   </p>
                 </Link>
               </li>

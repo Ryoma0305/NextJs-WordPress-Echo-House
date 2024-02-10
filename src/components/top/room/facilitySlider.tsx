@@ -27,7 +27,7 @@ const FacilitySlider = ({ props }: { props: { images: Array<{ image: string; alt
       >
         {props.images.map((item, index) => (
           <SwiperSlide key={index}>
-            <Image src={item.image} width="282" height="202" alt={item.alt} className="h-full w-full object-cover" />
+            <img src={item.image} width="282" height="202" alt={item.alt} className="h-full w-full object-cover" />
           </SwiperSlide>
         ))}
       </Swiper>

@@ -172,7 +172,7 @@ const Room = () => {
                   {item.facilities.items.map((item) => (
                     <li className="flex flex-col items-center justify-center" key={item.title}>
                       <p className="md:w-12">
-                        <Image src={item.image} alt={item.alt} width="22" height="22" className="w-full" />
+                        <img src={item.image} alt={item.alt} width="22" height="22" className="w-full" />
                       </p>
                       <p className="text-xs md:text-xl">{item.title}</p>
                     </li>
@@ -190,7 +190,7 @@ const Room = () => {
                   {item.facilities.items.map((item) => (
                     <li className="flex flex-col items-center justify-center" key={item.title}>
                       <p className="md:w-12">
-                        <Image src={item.image} alt={item.alt} width="22" height="22" className="w-full" />
+                        <img src={item.image} alt={item.alt} width="22" height="22" className="w-full" />
                       </p>
                       <p className="text-xs md:text-xl">{item.title}</p>
                     </li>

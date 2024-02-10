@@ -39,7 +39,7 @@ const Feature = () => {
             {lists.map((item) => (
               <li className="flex flex-col items-center md:w-[30%] md:px-10" key={item.titleEn}>
                 <p>
-                  <Image src={item.image} alt={item.alt} width="60" height="60" />
+                  <img src={item.image} alt={item.alt} width="60" height="60" />
                 </p>
                 <div className="mt-2 flex justify-center text-center md:items-center">
                   <p className="mt-3 flex flex-col items-center text-center">
