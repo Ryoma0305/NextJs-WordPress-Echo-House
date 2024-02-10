@@ -1,0 +1,29 @@
+const facilitiesJa = [
+  {
+    slides: {
+      images: [
+        { image: "/images/f1.jpg", alt: "" },
+        { image: "/images/f2.jpg", alt: "" },
+        { image: "/images/f3.jpg", alt: "" },
+        { image: "/images/f4.jpg", alt: "" },
+        { image: "/images/f5.jpg", alt: "" },
+        { image: "/images/f6.jpg", alt: "" },
+        { image: "/images/f7.jpg", alt: "" },
+        { image: "/images/af2.png", alt: "" },
+        { image: "/images/af2.png", alt: "" }
+      ]
+    },
+    facilities: {
+      heading: "共有スペース付属設備",
+      items: [
+        { title: "テレビ", image: "/images/television.png", alt: "" },
+        { title: "洗濯機", image: "/images/laundry.png", alt: "" },
+        { title: "キッチン", image: "/images/kitchen.png", alt: "" },
+        { title: "トイレ", image: "/images/toilet.png", alt: "" },
+        { title: "シャワー", image: "/images/shower.png", alt: "" }
+      ]
+    }
+  }
+];
+
+export default facilitiesJa;
