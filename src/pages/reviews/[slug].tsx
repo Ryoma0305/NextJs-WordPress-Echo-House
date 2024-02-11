@@ -4,8 +4,8 @@ import Layout from "../../components/common/Layout";
 import { getReviewPost } from "../../../lib/api";
 import { getReviewPostsWithSlug } from "../../../lib/api";
 import Button from "../../components/common/Button";
-import ReviewInfo from "@/components/reviews/reviewInfo";
-import ReviewImages from "@/components/reviews/reviewImages";
+import ReviewInfo from "../../components/reviews/reviewInfo";
+import ReviewImages from "../../components/reviews/reviewImages";
 import React from "react";
 
 type ReviewType = {
@@ -47,14 +47,17 @@ type ReviewType = {
 export const getStaticPaths = async () => {
   const { data } = await getReviewPostsWithSlug();
 
-  const slugs = data.reviews.nodes.map((review: { slug: string }) => ({ params: { slug: review.slug } }));
+  const slugs = data.reviews.nodes.map((review: { slug: string }) => ({ params: { slug: review.slug }, locale: "ja" }));
+
+  slugs.push(...slugs.map((p: any) => ({ ...p, locale: "en" })));
+
   return {
     paths: slugs,
     fallback: false
   };
 };
 
-export const getStaticProps = async ({ params }: { params: { slug: string } }) => {
+export const getStaticProps = async ({ params }: { params: { slug: string; locales: string } }) => {
   const { data } = await getReviewPost(params);
 
   return {

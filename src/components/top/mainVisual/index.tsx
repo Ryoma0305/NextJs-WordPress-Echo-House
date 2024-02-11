@@ -43,18 +43,22 @@ const MainVisual = () => {
         <h1>
           <img src="/images/main-logo.png" width="368" height="103" alt="女性専用シェアハウス Echo House" className="" />
         </h1>
-        {/* <ul className="flex justify-center gap-3">
+        <ul className="flex justify-center gap-3">
           <li>
-            <Link href="/" className="flex h-8 w-24 items-center justify-center rounded-full bg-gradient-green text-sm font-bold text-white-100">
+            <Link
+              href="/"
+              locale="ja"
+              className="flex h-8 w-24 items-center justify-center rounded-full bg-gradient-green text-sm font-bold text-white-100 transition-opacity duration-700 ease-out-expo hover:opacity-50"
+            >
               日本語
             </Link>
           </li>
           <li>
-            <Link href="/en/" className="flex h-8 w-24 items-center justify-center rounded-full bg-white-100 text-sm font-bold">
+            <Link href="/" locale="en" className="flex h-8 w-24 items-center justify-center rounded-full bg-white-100 text-sm font-bold transition-opacity duration-700 ease-out-expo hover:opacity-50">
               English
             </Link>
           </li>
-        </ul> */}
+        </ul>
       </div>
       <div className="absolute bottom-8 left-[45%] md:left-[49%]">
         <Link href="#about">

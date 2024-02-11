@@ -20,7 +20,9 @@ type BlogType = {
 export const getStaticPaths = async () => {
   const { data } = await getBlogPostsWithId();
 
-  const ids = data.blogs.nodes.map((blog: { id: string }) => ({ params: { id: blog.id } }));
+  const ids = data.blogs.nodes.map((blog: { id: string }) => ({ params: { id: blog.id }, locale: "ja" }));
+
+  ids.push(...ids.map((p: any) => ({ ...p, locale: "en" })));
 
   return {
     paths: ids,
@@ -28,7 +30,7 @@ export const getStaticPaths = async () => {
   };
 };
 
-export const getStaticProps = async ({ params }: { params: { id: string } }) => {
+export const getStaticProps = async ({ params }: { params: { id: string; locales: string } }) => {
   const { data } = await getBlogPost(params);
 
   return {
