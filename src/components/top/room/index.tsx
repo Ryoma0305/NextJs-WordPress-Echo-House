@@ -75,7 +75,7 @@ const Room = () => {
                   {item.facilities.items.map((item) => (
                     <li className="flex flex-col items-center justify-center" key={item.title}>
                       <p className="w-8">
-                        <img src={item.image} alt={item.alt} width="22" height="22" className="w-full" />
+                        <Image src={item.image} alt={item.alt} width="22" height="22" className="w-full" />
                       </p>
                       <p
                         className={clsx("text-xs", {
@@ -100,7 +100,7 @@ const Room = () => {
                   {item.facilities.items.map((item) => (
                     <li className="flex flex-col items-center justify-center" key={item.title}>
                       <p className="w-8">
-                        <img src={item.image} alt={item.alt} width="22" height="22" className="w-full" />
+                        <Image src={item.image} alt={item.alt} width="22" height="22" className="w-full" />
                       </p>
                       <p className="text-xs md:text-lg">{item.title}</p>
                     </li>

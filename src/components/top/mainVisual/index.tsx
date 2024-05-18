@@ -45,7 +45,7 @@ const MainVisual = () => {
       </Swiper>
       <div className="absolute left-1/2 top-56 z-[1] flex w-[70%] -translate-x-1/2 flex-col items-center gap-4">
         <h1>
-          <img src="/images/main-logo.png" width="368" height="103" alt="女性専用シェアハウス Echo House" className="" />
+          <Image src="/images/main-logo.png" width="368" height="103" alt="女性専用シェアハウス Echo House" className="" />
         </h1>
         <ul className="flex justify-center gap-3">
           <li>

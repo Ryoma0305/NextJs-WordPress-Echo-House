@@ -34,7 +34,7 @@ const AreaSlider = ({ slides, openModal }: Slides) => {
       >
         {slides.images.map((item, index) => (
           <SwiperSlide key={index} onClick={() => openModal(item.image)}>
-            <img src={item.image} width="202" height="91" alt={item.alt} className="w-full" />
+            <Image src={item.image} width="202" height="91" alt={item.alt} className="w-full" />
           </SwiperSlide>
         ))}
       </Swiper>

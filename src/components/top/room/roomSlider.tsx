@@ -24,7 +24,7 @@ const RoomSlider = ({ slides, openModal }: Slides) => {
       <Swiper spaceBetween={10} navigation={true} thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }} modules={[FreeMode, Navigation, Thumbs]}>
         {slides.images.map((item, index) => (
           <SwiperSlide key={index} onClick={() => openModal(item.image)}>
-            <img src={item.image} width="431" height="324" alt={item.alt} className="w-full" />
+            <Image src={item.image} width="431" height="324" alt={item.alt} className="w-full" />
           </SwiperSlide>
         ))}
       </Swiper>
@@ -32,7 +32,7 @@ const RoomSlider = ({ slides, openModal }: Slides) => {
       <Swiper onSwiper={setThumbsSwiper} spaceBetween={2} slidesPerView={4} freeMode={true} watchSlidesProgress={true} modules={[FreeMode, Navigation, Thumbs]}>
         {slides.images.map((item, index) => (
           <SwiperSlide key={index}>
-            <img src={item.image} width="108" height="81" alt={item.alt} className="w-full" />
+            <Image src={item.image} width="108" height="81" alt={item.alt} className="w-full" />
           </SwiperSlide>
         ))}
       </Swiper>

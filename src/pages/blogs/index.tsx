@@ -45,7 +45,7 @@ export default function blogs({ blogs }: { blogs: BlogsType[] }) {
                     {formatJapaneseDate(item.date)}
                   </time>
                   <p className="order-1 flex justify-center md:h-64">
-                    <img src={item.featuredImage?.node.sourceUrl} width="308" height="185" alt="" className="h-full w-full object-cover" />
+                    <Image src={item.featuredImage?.node.sourceUrl} width="308" height="185" alt="" className="h-full w-full object-cover" />
                   </p>
                 </Link>
               </li>
