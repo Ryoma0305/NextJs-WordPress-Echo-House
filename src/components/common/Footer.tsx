@@ -42,7 +42,7 @@ const Footer = () => {
         </div>
         <ul className="mt-4 flex justify-center gap-2 md:justify-end">
           {sns.map((item) => (
-            <li key={item.name} className="text-xl md:text-4xl">
+            <li key={item.name} className="text-xl transition-all duration-700 ease-out-expo hover:opacity-50 md:text-4xl">
               <Link href={item.href} target="_blank">
                 {item.content}
               </Link>

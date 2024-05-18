@@ -12,14 +12,14 @@
 
 .swiper .swiper-button-next,
 .swiper .swiper-button-prev {
-  background-color: rgba(255, 255, 255, 0.6);
+  background: linear-gradient(-225deg, #b7f8db 0%, #50a7c2 100%);
   padding: 1.2rem;
 }
 
 .swiper .swiper-button-next::after,
 .swiper .swiper-button-prev::after {
   font-size: 1.2rem;
-  color: #000;
+  color: #fff;
 }
 
 .swiper .swiper-wrapper {

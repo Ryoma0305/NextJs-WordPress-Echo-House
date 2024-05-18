@@ -1,10 +1,12 @@
+import React from "react";
+import { useRouter } from "next/router";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import { Autoplay, EffectFade } from "swiper/modules";
+import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
 const slides = [
   { image: "/images/main-bg1.jpg", alt: "" },
@@ -13,6 +15,8 @@ const slides = [
 ];
 
 const MainVisual = () => {
+  const { locale } = useRouter();
+
   return (
     <div className="relative h-[calc(100vh_-_8rem)] w-full">
       <Swiper
@@ -48,13 +52,23 @@ const MainVisual = () => {
             <Link
               href="/"
               locale="ja"
-              className="flex h-8 w-24 items-center justify-center rounded-full bg-gradient-green text-sm font-bold text-white-100 transition-opacity duration-700 ease-out-expo hover:opacity-50"
+              className={clsx("flex h-8 w-24 items-center justify-center rounded-full text-sm font-bold transition-opacity duration-700 ease-out-expo hover:opacity-50", {
+                "bg-white-100": locale === "en",
+                "bg-gradient-green text-white-100 pointer-events-none": locale !== "en"
+              })}
             >
               日本語
             </Link>
           </li>
           <li>
-            <Link href="/" locale="en" className="flex h-8 w-24 items-center justify-center rounded-full bg-white-100 text-sm font-bold transition-opacity duration-700 ease-out-expo hover:opacity-50">
+            <Link
+              href="/"
+              locale="en"
+              className={clsx("flex h-8 w-24 items-center justify-center rounded-full bg-white-100 text-sm font-bold transition-opacity duration-700 ease-out-expo hover:opacity-50", {
+                "bg-white-100": locale !== "en",
+                "bg-gradient-green text-white-100 pointer-events-none": locale === "en"
+              })}
+            >
               English
             </Link>
           </li>

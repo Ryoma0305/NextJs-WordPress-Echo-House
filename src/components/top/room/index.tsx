@@ -71,15 +71,15 @@ const Room = () => {
                   </table>
                 )}
                 <p className="mt-4 md:mt-8">{item.facilities.heading}</p>
-                <ul className="mt-4 flex justify-between gap-4 rounded-lg bg-gray-200 p-8 md:gap-2 md:px-16">
+                <ul className="mt-4 flex justify-evenly gap-4 rounded-lg bg-gray-200 p-8 px-4 md:gap-2 md:px-8">
                   {item.facilities.items.map((item) => (
                     <li className="flex flex-col items-center justify-center" key={item.title}>
-                      <p className="md:w-12">
+                      <p className="w-8">
                         <img src={item.image} alt={item.alt} width="22" height="22" className="w-full" />
                       </p>
                       <p
                         className={clsx("text-xs", {
-                          "md:text-xl": locale === "ja",
+                          "md:text-lg": locale === "ja",
                           "md:text-base": locale === "en"
                         })}
                       >
@@ -96,13 +96,13 @@ const Room = () => {
               <FacilitySlider slides={item.slides} openModal={openModal} />
               <div className="px-4 pb-16 md:mx-auto md:max-w-[80%]">
                 <p>{item.facilities.heading}</p>
-                <ul className="mt-4 flex justify-between gap-4 rounded-lg bg-gray-200 p-8 md:gap-2 md:px-16">
+                <ul className="mt-4 flex justify-evenly gap-4 rounded-lg bg-gray-200 p-8 px-4 md:gap-2 md:px-16">
                   {item.facilities.items.map((item) => (
                     <li className="flex flex-col items-center justify-center" key={item.title}>
-                      <p className="md:w-12">
+                      <p className="w-8">
                         <img src={item.image} alt={item.alt} width="22" height="22" className="w-full" />
                       </p>
-                      <p className="text-xs md:text-xl">{item.title}</p>
+                      <p className="text-xs md:text-lg">{item.title}</p>
                     </li>
                   ))}
                 </ul>
