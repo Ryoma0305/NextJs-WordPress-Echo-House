@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import roomsEn from "../../../locals/top/room/rooms/en";
@@ -12,8 +13,8 @@ import SectionHeading from "../../common/SectionHeading";
 import FacilitySlider from "./facilitySlider";
 import AreaSlider from "./areaSlider";
 import Button from "../../common/Button";
+import Modal from "../../common/modal";
 import { FadeInBottom } from "../../common/FadeInBottom";
-import React from "react";
 
 const areas = [
   {
@@ -33,6 +34,16 @@ const Room = () => {
   const rooms = locale === "en" ? roomsEn : roomsJa;
   const views = locale === "en" ? viewsEN : viewsJa;
 
+  const [modalImage, setModalImage] = useState(null);
+
+  const openModal = (image) => {
+    setModalImage(image);
+  };
+
+  const closeModal = () => {
+    setModalImage(null);
+  };
+
   return (
     <FadeInBottom>
       <section id="room">
@@ -41,7 +52,7 @@ const Room = () => {
           {rooms.map((item, index) => (
             <div className="md:grid md:grid-cols-2" key={index}>
               <div className="pb-8">
-                <RoomSlider slides={item.slides} />
+                <RoomSlider slides={item.slides} openModal={openModal} />
               </div>
               <div className="px-4 pb-16">
                 {item.name && <h3 className="text-xl font-bold md:text-2xl">{item.name}</h3>}
@@ -82,7 +93,7 @@ const Room = () => {
           ))}
           {facilities.map((item, index) => (
             <div key={index}>
-              <FacilitySlider props={item.slides} />
+              <FacilitySlider slides={item.slides} openModal={openModal} />
               <div className="px-4 pb-16 md:mx-auto md:max-w-[80%]">
                 <p>{item.facilities.heading}</p>
                 <ul className="mt-4 flex justify-between gap-4 rounded-lg bg-gray-200 p-8 md:gap-2 md:px-16">
@@ -100,7 +111,7 @@ const Room = () => {
           ))}
           <div>
             {areas.map((item, index) => (
-              <AreaSlider props={item.slides} key={index} />
+              <AreaSlider slides={item.slides} key={index} openModal={openModal} />
             ))}
 
             <p className="mt-8 inline-block bg-gradient-green px-4 py-3 text-white-100">{locale === "ja" ? "3Dビュー探索" : "3D View"}</p>
@@ -122,6 +133,7 @@ const Room = () => {
           </div>
         </div>
       </section>
+      {modalImage && <Modal modalImage={modalImage} closeModal={closeModal} />}
     </FadeInBottom>
   );
 };

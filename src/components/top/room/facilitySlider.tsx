@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/free-mode";
@@ -7,9 +6,18 @@ import "swiper/css/thumbs";
 import { FreeMode, Navigation } from "swiper/modules";
 import Image from "next/image";
 import React from "react";
-// import Modal from "../../../components/common/modal";
 
-const FacilitySlider = ({ props }: { props: { images: Array<{ image: string; alt: string }> } }) => {
+type Slides = {
+  slides: {
+    images: {
+      image: string;
+      alt: string;
+    }[];
+  };
+  openModal: (image: string) => void;
+};
+
+const FacilitySlider = ({ slides, openModal }: Slides) => {
   return (
     <div className="pb-8">
       <Swiper
@@ -25,8 +33,8 @@ const FacilitySlider = ({ props }: { props: { images: Array<{ image: string; alt
         modules={[FreeMode, Navigation]}
         className="md:h-[13rem]"
       >
-        {props.images.map((item, index) => (
-          <SwiperSlide key={index}>
+        {slides.images.map((item, index) => (
+          <SwiperSlide key={index} onClick={() => openModal(item.image)}>
             <img src={item.image} width="282" height="202" alt={item.alt} className="h-full w-full object-cover" />
           </SwiperSlide>
         ))}
