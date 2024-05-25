@@ -1,3 +1,6 @@
+import React from "react";
+import Head from "next/head";
+import { useRouter } from "next/router";
 import Image from "next/image";
 import { formatJapaneseDate } from "../../utils/formatDate";
 import Layout from "../../components/common/Layout";
@@ -6,7 +9,8 @@ import { getReviewPostsWithSlug } from "../../../lib/api";
 import Button from "../../components/common/Button";
 import ReviewInfo from "../../components/reviews/reviewInfo";
 import ReviewImages from "../../components/reviews/reviewImages";
-import React from "react";
+import en from "../../locals/head/review/en";
+import ja from "../../locals/head/review/ja";
 
 type ReviewType = {
   reviews: {
@@ -68,9 +72,18 @@ export const getStaticProps = async ({ params }: { params: { slug: string; local
 };
 
 const Review = ({ review }: { review: ReviewType }) => {
+  const { locale } = useRouter();
+  const t = locale === "en" ? en : ja;
+
   const totalScore = (review.reviews.staffRating + review.reviews.atmosphereRating + review.reviews.cleanlinessRating + review.reviews.locationRating + review.reviews.priceRating) / 5;
   return (
     <Layout>
+      <Head>
+        <title>{review.reviews.name} | ECHO HOUSE</title>
+        <meta name="description" content={t.description} />
+        <meta property="og:title" content={t.title} key="title" />
+        <meta name="og:description" content={t.description} key="description" />
+      </Head>
       <div className="flex h-40 items-center justify-center bg-slate-800 md:h-80">
         <h1 className="font-accent text-xl font-bold uppercase text-white-100 md:text-4xl">Review</h1>
       </div>
