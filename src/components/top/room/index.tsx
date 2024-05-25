@@ -46,7 +46,7 @@ const Room = () => {
 
   return (
     <FadeInBottom>
-      <section id="room" className="animate-fade-in-bottom px-4 py-16">
+      <section id="room" className="animate-fade-in-bottom bg-white-200 px-4 py-16">
         <SectionHeading titleJp="お部屋案内" titleEn="Room" />
         <div className="mx-auto max-w-[1200px]">
           {rooms.map((item, index) => (
