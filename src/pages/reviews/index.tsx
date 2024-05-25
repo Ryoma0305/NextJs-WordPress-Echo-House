@@ -1,8 +1,12 @@
+import React from "react";
+import Head from "next/head";
+import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
 import Layout from "../../components/common/Layout";
 import { getReviewPosts } from "../../../lib/api";
-import React from "react";
+import en from "../../locals/head/review/en";
+import ja from "../../locals/head/review/ja";
 
 interface ReviewsType {
   id: string;
@@ -27,9 +31,18 @@ export const getStaticProps = async () => {
   };
 };
 
-export default function reviews({ reviews }: { reviews: ReviewsType[] }) {
+export default function Reviews({ reviews }: { reviews: ReviewsType[] }) {
+  const { locale } = useRouter();
+  const t = locale === "en" ? en : ja;
+
   return (
     <Layout>
+      <Head>
+        <title>{t.title}</title>
+        <meta name="description" content={t.description} />
+        <meta property="og:title" content={t.title} key="title" />
+        <meta name="og:description" content={t.description} key="description" />
+      </Head>
       <div className="flex h-40 items-center justify-center bg-slate-800 md:h-80">
         <h1 className="font-accent text-xl font-bold uppercase text-white-100 md:text-4xl">Review</h1>
       </div>
