@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-const contactReason = z.enum(["見学希望", "入居希望", "その他"]);
+const contactReason = z.array(z.string()).min(1, { message: "入力が必須の項目です" });
 const email: z.ZodString = z
   .string({ required_error: "入力が必須の項目です" })
   .min(1, { message: "入力が必須の項目です" })
