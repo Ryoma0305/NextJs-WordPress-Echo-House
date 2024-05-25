@@ -2,7 +2,7 @@ import React from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import Layout from "../../components/common/Layout";
-import HubspotForm from "../../components/contact/HubspotForm";
+import ContactForm from "../../components/contact/ContactForm";
 import en from "../../locals/head/contact/en";
 import ja from "../../locals/head/contact/ja";
 
@@ -22,7 +22,7 @@ export default function Form() {
         <h1 className="font-accent text-xl font-bold uppercase text-white-100 md:text-4xl">Contact</h1>
       </div>
       <div className="container mx-auto mt-5 max-w-[1200px] px-4 md:px-56 md:pb-40 md:pt-24">
-        <HubspotForm />
+        <ContactForm />
       </div>
     </Layout>
   );
