@@ -1,3 +1,6 @@
+import React from "react";
+import Head from "next/head";
+import { useRouter } from "next/router";
 import Layout from "../components/common/Layout";
 import MainVisual from "../components/top/mainVisual";
 import About from "../components/top/about";
@@ -8,7 +11,8 @@ import Blog from "../components/top/blog";
 import Access from "../components/top/access";
 import Contact from "../components/top/contact";
 import { getAllPostsForHome } from "../../lib/api";
-import React from "react";
+import en from "../locals/head/top/en";
+import ja from "../locals/head/top/ja";
 
 type BlogType = {
   date: string;
@@ -48,8 +52,17 @@ export const getStaticProps = async () => {
 };
 
 export default function Home({ blogs, reviews }: { blogs: BlogType[]; reviews: ReviewType[] }) {
+  const { locale } = useRouter();
+  const t = locale === "en" ? en : ja;
+
   return (
     <Layout>
+      <Head>
+        <title>{t.title}</title>
+        <meta name="description" content={t.description} />
+        <meta property="og:title" content={t.title} key="title" />
+        <meta name="og:description" content={t.description} key="description" />
+      </Head>
       <MainVisual />
       <About />
       <Feature />

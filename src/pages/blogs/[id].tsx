@@ -1,9 +1,13 @@
+import React from "react";
+import Head from "next/head";
+import { useRouter } from "next/router";
 import { formatJapaneseDate } from "../../utils/formatDate";
 import Button from "../../components/common/Button";
 import Layout from "../../components/common/Layout";
 import { getBlogPost } from "../../../lib/api";
 import { getBlogPostsWithId } from "../../../lib/api";
-import React from "react";
+import en from "../../locals/head/review/en";
+import ja from "../../locals/head/review/ja";
 
 type BlogType = {
   date: string;
@@ -41,8 +45,17 @@ export const getStaticProps = async ({ params }: { params: { id: string; locales
 };
 
 const Blog = ({ blog }: { blog: BlogType }) => {
+  const { locale } = useRouter();
+  const t = locale === "en" ? en : ja;
+
   return (
     <Layout>
+      <Head>
+        <title>{blog.title} | ECHO HOUSE</title>
+        <meta name="description" content={t.description} />
+        <meta property="og:title" content={t.title} key="title" />
+        <meta name="og:description" content={t.description} key="description" />
+      </Head>
       <div className="flex h-40 items-center justify-center bg-slate-800 md:h-80">
         <h1 className="font-accent text-xl font-bold uppercase text-white-100 md:text-4xl">Blog</h1>
       </div>
