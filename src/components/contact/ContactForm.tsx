@@ -21,15 +21,15 @@ const ContactForm: FC<ContactFormProps> = ({}) => {
         <div className="mb-1 text-base font-bold">お問い合わせ種別（Contact reason）</div>
         <div className="flex gap-8">
           <div className="flex gap-2">
-            <input type="checkbox" defaultChecked {...register("ContactReason")} value="見学希望" />
+            <input type="radio" defaultChecked {...register("ContactReason")} value="見学希望" />
             <label>見学希望（Viewing）</label>
           </div>
           <div className="flex gap-2">
-            <input type="checkbox" {...register("ContactReason")} value="入居希望" />
+            <input type="radio" {...register("ContactReason")} value="入居希望" />
             <label>入居希望（Move in）</label>
           </div>
           <div className="flex gap-2">
-            <input type="checkbox" {...register("ContactReason")} value="その他" />
+            <input type="radio" {...register("ContactReason")} value="その他" />
             <label>その他（Other）</label>
           </div>
         </div>
