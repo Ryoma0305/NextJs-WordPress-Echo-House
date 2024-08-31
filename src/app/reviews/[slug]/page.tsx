@@ -1,16 +1,21 @@
 import React from "react";
-import Head from "next/head";
-import { useRouter } from "next/router";
+// import { useRouter } from "next/router";
 import Image from "next/image";
-import { formatJapaneseDate } from "../../utils/formatDate";
-import Layout from "../../components/common/Layout";
-import { getReviewPost } from "../../../lib/api";
-import { getReviewPostsWithSlug } from "../../../lib/api";
-import Button from "../../components/common/Button";
-import ReviewInfo from "../../components/reviews/reviewInfo";
-import ReviewImages from "../../components/reviews/reviewImages";
-import en from "../../locals/head/review/en";
-import ja from "../../locals/head/review/ja";
+import { formatJapaneseDate } from "../../../utils/formatDate";
+import { getReviewPost } from "../../../../lib/api";
+import { getReviewPostsWithSlug } from "../../../../lib/api";
+import { Metadata } from "next";
+import Button from "../../../components/common/Button";
+import ReviewInfo from "../../../components/reviews/reviewInfo";
+import ReviewImages from "../../../components/reviews/reviewImages";
+// import en from "../../../locals/head/review/en";
+// import ja from "../../../locals/head/review/ja";
+
+type Props = {
+  params: {
+    slug: string;
+  };
+};
 
 type ReviewType = {
   reviews: {
@@ -48,42 +53,36 @@ type ReviewType = {
   date: string;
 };
 
-export const getStaticPaths = async () => {
+export async function generateStaticParams() {
   const { data } = await getReviewPostsWithSlug();
 
-  const slugs = data.reviews.nodes.map((review: { slug: string }) => ({ params: { slug: review.slug }, locale: "ja" }));
+  if (!data) {
+    return [];
+  }
 
-  slugs.push(...slugs.map((p: any) => ({ ...p, locale: "en" })));
+  return data.reviews.nodes.map((post: { slug: string }) => ({
+    slug: post.slug
+  }));
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const post = await getReviewPost(params);
+  if (!post) {
+    return {};
+  }
 
   return {
-    paths: slugs,
-    fallback: false
+    title: `${post.data.reviewBy.title} | ECHO HOUSE`
   };
-};
+}
 
-export const getStaticProps = async ({ params }: { params: { slug: string; locales: string } }) => {
-  const { data } = await getReviewPost(params);
-
-  return {
-    props: {
-      review: data.reviewBy
-    }
-  };
-};
-
-const Review = ({ review }: { review: ReviewType }) => {
-  const { locale } = useRouter();
-  const t = locale === "en" ? en : ja;
-
+export default async function Post({ params }: { params: { slug: string } }) {
+  const post = await getReviewPost(params);
+  const review: ReviewType = post.data.reviewBy;
   const totalScore = (review.reviews.staffRating + review.reviews.atmosphereRating + review.reviews.cleanlinessRating + review.reviews.locationRating + review.reviews.priceRating) / 5;
+
   return (
-    <Layout>
-      <Head>
-        <title>{review.reviews.name} | ECHO HOUSE</title>
-        <meta name="description" content={t.description} />
-        <meta property="og:title" content={t.title} key="title" />
-        <meta name="og:description" content={t.description} key="description" />
-      </Head>
+    <>
       <div className="flex h-40 items-center justify-center bg-slate-800 md:h-80">
         <h1 className="font-accent text-xl font-bold uppercase text-white-100 md:text-4xl">Review</h1>
       </div>
@@ -132,8 +131,6 @@ const Review = ({ review }: { review: ReviewType }) => {
           </div>
         </div>
       </section>
-    </Layout>
+    </>
   );
-};
-
-export default Review;
+}
