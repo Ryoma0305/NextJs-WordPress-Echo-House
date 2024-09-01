@@ -1,15 +1,15 @@
 import Image from "next/image";
-import { useRouter } from "next/router";
+// import { useRouter } from "next/router";
 import Link from "next/link";
 import SectionHeading from "../../common/SectionHeading";
 import Button from "../../common/Button";
-import { truncateText } from "../../../utils/truncateText";
-import { formatJapaneseDate } from "../../../utils/formatDate";
+import { truncateText } from "../../../../utils/truncateText";
+import { formatJapaneseDate } from "../../../../utils/formatDate";
 import { FadeInBottom } from "../../common/FadeInBottom";
 import React from "react";
 
 const Blog = ({ blogs }: { blogs: Array<any> }) => {
-  const { locale } = useRouter();
+  // const { locale } = useRouter();
 
   return (
     <FadeInBottom>

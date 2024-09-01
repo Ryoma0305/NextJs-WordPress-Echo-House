@@ -33,7 +33,7 @@ export default async function Page() {
           <ul className="flex flex-col gap-16 md:grid md:grid-cols-3 md:gap-4 md:gap-x-8 md:gap-y-32">
             {blogs.map((item) => (
               <li key={item.id}>
-                <Link href={`/blogs/${item.id}`} className="flex flex-col gap-2 transition-opacity duration-500 ease-out-expo hover:opacity-70">
+                <Link href={`/blogs/${item.slug}`} className="flex flex-col gap-2 transition-opacity duration-500 ease-out-expo hover:opacity-70">
                   <p className="order-3 font-bold md:text-xl">{item.title}</p>
                   <time className="order-2 inline-block text-xs md:text-base" dateTime={new Date(item.date).toISOString()}>
                     {formatJapaneseDate(item.date)}

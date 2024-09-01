@@ -6,15 +6,14 @@ import { useRouter } from "next/router";
 import clsx from "clsx";
 import en from "../../../locals/contact/thanks/en";
 import ja from "../../../locals/contact/thanks/ja";
-import Layout from "../../../components/common/Layout";
-import Button from "../../../components/common/Button";
+import Button from "../../_components/common/Button";
 
 export default function Thanks() {
   const { locale } = useRouter();
   const t = locale === "en" ? en : ja;
 
   return (
-    <Layout>
+    <>
       <Head>
         <title>{t.title} | HOTEL LUCKYⅡ</title>
       </Head>
@@ -32,6 +31,6 @@ export default function Thanks() {
           <Button title={t.buttonText} href="/" />
         </div>
       </div>
-    </Layout>
+    </>
   );
 }

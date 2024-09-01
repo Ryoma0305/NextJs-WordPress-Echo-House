@@ -2,10 +2,11 @@ import React from "react";
 // import Head from "next/head";
 // import { useRouter } from "next/router";
 import { formatJapaneseDate } from "../../../utils/formatDate";
-import Button from "../../../components/common/Button";
+
 import { getBlogPost } from "../../../../lib/api";
-import { getBlogPostsWithId } from "../../../../lib/api";
+import { getBlogPostsWithSlug } from "../../../../lib/api";
 import { Metadata } from "next";
+import Button from "../../_components/common/Button";
 // import en from "../../../locals/head/review/en";
 // import ja from "../../../locals/head/review/ja";
 
@@ -16,46 +17,47 @@ type BlogType = {
       sourceUrl: string;
     };
   };
-  id: string;
+  slug: string;
   title: string;
   content: string;
 };
 
 export const generateStaticParams = async () => {
-  const { data } = await getBlogPostsWithId();
+  const { data } = await getBlogPostsWithSlug();
 
   if (!data) {
     return [];
   }
 
-  return data.blogs.nodes.map((post: { id: string }) => ({
-    id: post.id
+  return data.blogs.nodes.map((post: { slug: string }) => ({
+    slug: post.slug
   }));
 };
 
-export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata | null> {
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata | null> {
   const post = await getBlogPost(params);
-  console.log("blog-test", post);
-  // if (!post) {
-  //   return {};
-  // }
-  // return {
-  //   title: post.title,
-  // };
+  const title = post.data.blogBy.title;
+
+  if (!post) {
+    return {};
+  }
+  return {
+    title: title
+  };
 }
 
-export default async function Post({ params }: { params: { id: string } }) {
-  const post = await getBlogPost(params);
-  // const blog = data.blogBy;
-  // const { locale } = useRouter();
-  // const t = locale === "en" ? en : ja;
+export default async function Post({ params }: { params: { slug: string } }) {
+  const data = await getBlogPost(params);
+  const blog = data.data.blogBy;
+  // // const { locale } = useRouter();
+  // // const t = locale === "en" ? en : ja;
 
   return (
     <>
       <div className="flex h-40 items-center justify-center bg-slate-800 md:h-80">
         <h1 className="font-accent text-xl font-bold uppercase text-white-100 md:text-4xl">Blog</h1>
       </div>
-      {/* <section className="px-4 pb-16 pt-32">
+      <section className="px-4 pb-16 pt-32">
         <div className="mx-auto flex max-w-[1100px] flex-col gap-8">
           <div>
             <h2 className="text-2xl font-bold">{blog.title}</h2>
@@ -71,7 +73,7 @@ export default async function Post({ params }: { params: { id: string } }) {
             <Button title="Blog一覧へ" href="/blogs/" />
           </div>
         </div>
-      </section> */}
+      </section>
     </>
   );
 }

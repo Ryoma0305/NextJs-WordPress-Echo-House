@@ -3,7 +3,6 @@
 import React from "react";
 import Head from "next/head";
 // import { useRouter } from "next/router";
-import Layout from "../../components/common/Layout";
 import ContactForm from "../../app/_components/contact/ContactForm";
 // import en from "../../locals/head/contact/en";
 import ja from "../../locals/head/contact/ja";
@@ -13,7 +12,7 @@ export default function Form() {
   // const t = locale === "en" ? en : ja;
   const t = ja;
   return (
-    <Layout>
+    <>
       <Head>
         <title>{t.title}</title>
         <meta name="description" content={t.description} />
@@ -26,6 +25,6 @@ export default function Form() {
       <div className="container mx-auto mt-5 max-w-[1200px] px-4 md:px-56 md:pb-40 md:pt-24">
         <ContactForm />
       </div>
-    </Layout>
+    </>
   );
 }

@@ -5,9 +5,9 @@ import { formatJapaneseDate } from "../../../utils/formatDate";
 import { getReviewPost } from "../../../../lib/api";
 import { getReviewPostsWithSlug } from "../../../../lib/api";
 import { Metadata } from "next";
-import Button from "../../../components/common/Button";
-import ReviewInfo from "../../../components/reviews/reviewInfo";
-import ReviewImages from "../../../components/reviews/reviewImages";
+import Button from "../../_components/common/Button";
+import ReviewInfo from "../../_components/reviews/ReviewInfo";
+import ReviewImages from "../../_components/reviews/ReviewImages";
 // import en from "../../../locals/head/review/en";
 // import ja from "../../../locals/head/review/ja";
 
