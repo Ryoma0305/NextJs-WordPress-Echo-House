@@ -18,7 +18,7 @@ const Blog = ({ blogs }: { blogs: Array<any> }) => {
           {blogs.slice(0, 3).map((item) => (
             <li key={item.id} className="relative flex flex-col gap-2 transition-opacity duration-500 ease-out-expo hover:opacity-70">
               <h3 className="order-3 text-lg font-bold">
-                <Link href={`/blogs/${item.id}`} className="before:absolute before:inset-0">
+                <Link href={`/blogs/${item.slug}`} className="before:absolute before:inset-0">
                   {item.title}
                 </Link>
               </h3>
