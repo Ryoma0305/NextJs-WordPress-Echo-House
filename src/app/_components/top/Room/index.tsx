@@ -1,15 +1,15 @@
 "use client";
 
 import React, { useState } from "react";
-// import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
-// import roomsEn from "../../../locals/top/room/rooms/en";
+import roomsEn from "../../../../locals/top/room/rooms/en";
 import roomsJa from "../../../../locals/top/room/rooms/ja";
-// import facilitiesEN from "../../../locals/top/room/facilities/en";
+import facilitiesEN from "../../../../locals/top/room/facilities/en";
 import facilitiesJa from "../../../../locals/top/room/facilities/ja";
-// import viewsEN from "../../../locals/top/room/views/en";
+import viewsEN from "../../../../locals/top/room/views/en";
 import viewsJa from "../../../../locals/top/room/views/ja";
-// import clsx from "clsx";
+import clsx from "clsx";
 import RoomSlider from "./roomSlider";
 import SectionHeading from "../../common/SectionHeading";
 import FacilitySlider from "./facilitySlider";
@@ -32,13 +32,10 @@ const areas = [
 ];
 
 const Room = () => {
-  // const { locale } = useRouter();
-  // const facilities = locale === "en" ? facilitiesEN : facilitiesJa;
-  const facilities = facilitiesJa;
-  // const rooms = locale === "en" ? roomsEn : roomsJa;
-  const rooms = roomsJa;
-  // const views = locale === "en" ? viewsEN : viewsJa;
-  const views = viewsJa;
+  const pathname = usePathname();
+  const facilities = pathname.includes("eng") ? facilitiesEN : facilitiesJa;
+  const rooms = pathname.includes("eng") ? roomsEn : roomsJa;
+  const views = pathname.includes("eng") ? viewsEN : viewsJa;
 
   const [modalImage, setModalImage] = useState<string | null>(null);
 
@@ -84,11 +81,10 @@ const Room = () => {
                         <Image src={item.image} alt={item.alt} width="22" height="22" className="w-full" />
                       </p>
                       <p
-                        // className={clsx("text-xs", {
-                        //   "md:text-lg": locale === "ja",
-                        //   "md:text-base": locale === "en"
-                        // })}
-                        className="text-xs md:text-lg"
+                        className={clsx("text-xs", {
+                          "md:text-lg": !pathname.includes("eng"),
+                          "md:text-base": pathname.includes("eng")
+                        })}
                       >
                         {item.title}
                       </p>
@@ -121,8 +117,7 @@ const Room = () => {
               <AreaSlider slides={item.slides} key={index} openModal={openModal} />
             ))}
 
-            {/* <p className="mt-8 inline-block bg-gradient-green px-4 py-3 text-white-100">{locale === "ja" ? "3Dビュー探索" : "3D View"}</p> */}
-            <p className="mt-8 inline-block bg-gradient-green px-4 py-3 text-white-100">3Dビュー探索</p>
+            <p className="mt-8 inline-block bg-gradient-green px-4 py-3 text-white-100">{!pathname.includes("eng") ? "3Dビュー探索" : "3D View"}</p>
             <ul className="mt-8 flex flex-col items-center px-4 md:flex-row md:flex-wrap md:items-start md:gap-4 md:px-0">
               {views.map((item, index) => (
                 <li className="relative mt-4 w-full rounded-md border border-gray-300 md:mt-0 md:w-[48%]" key={index}>

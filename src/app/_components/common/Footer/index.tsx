@@ -1,29 +1,32 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 import BackToTopButton from "../../../../app/_components/common/BackToTopButton";
 import React from "react";
 
-const navigation = [
-  { name: "top", href: "/" },
-  { name: "about", href: "#about" },
-  { name: "room", href: "#room" },
-  { name: "review", href: "/reviews/" },
-  { name: "blog", href: "/blogs/" },
-  { name: "access", href: "/#access" }
-];
-
-const sns = [
-  { name: "instagram", href: "https://www.instagram.com/echofee_osaka/", content: <FaInstagram /> },
-  {
-    name: "facebook",
-    href: "https://www.facebook.com/ECHO-HOUSE-324063728318655/?modal=admin_todo_tour",
-    content: <FaFacebook />
-  }
-];
-
 const Footer = () => {
+  const pathname = usePathname();
+
+  const navigation = [
+    { name: "top", href: !pathname.includes("eng") ? "/" : "/eng/" },
+    { name: "about", href: !pathname.includes("eng") ? "/#about" : "/eng#about" },
+    { name: "room", href: !pathname.includes("eng") ? "/#room" : "/eng#room" },
+    { name: "review", href: !pathname.includes("eng") ? "/reviews/" : "/eng/reviews" },
+    { name: "blog", href: !pathname.includes("eng") ? "/blogs/" : "/eng/blogs" },
+    { name: "access", href: !pathname.includes("eng") ? "/#access" : "/eng#access" }
+  ];
+
+  const sns = [
+    { name: "instagram", href: "https://www.instagram.com/echofee_osaka/", content: <FaInstagram /> },
+    {
+      name: "facebook",
+      href: "https://www.facebook.com/ECHO-HOUSE-324063728318655/?modal=admin_todo_tour",
+      content: <FaFacebook />
+    }
+  ];
+
   return (
     <footer className="bg-gray-300 px-8 py-16 md:py-24">
       <div className="mx-auto max-w-[1200px]">

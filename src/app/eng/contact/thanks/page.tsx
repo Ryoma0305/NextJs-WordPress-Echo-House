@@ -1,12 +1,11 @@
 "use client";
 
 import React from "react";
-import Head from "next/head";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
-import en from "../../../locals/contact/thanks/en";
-import ja from "../../../locals/contact/thanks/ja";
-import Button from "../../_components/common/Button";
+import en from "../../../../locals/contact/thanks/en";
+import ja from "../../../../locals/contact/thanks/ja";
+import Button from "../../../_components/common/Button";
 
 export default function Thanks() {
   const pathname = usePathname();
@@ -14,9 +13,6 @@ export default function Thanks() {
 
   return (
     <>
-      <Head>
-        <title>{t.title} | HOTEL LUCKYⅡ</title>
-      </Head>
       <div className="flex h-40 items-center justify-center bg-slate-800 md:h-80">
         <h1 className="font-accent text-xl font-bold uppercase text-white-100 md:text-4xl">Contact</h1>
       </div>

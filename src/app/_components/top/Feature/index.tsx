@@ -1,6 +1,8 @@
-// import { useRouter } from "next/router";
-// import en from "../../../locals/top/feature/en";
-// import ja from "../../../locals/top/feature/ja";
+"use client";
+
+import { usePathname } from "next/navigation";
+import en from "../../../../locals/top/feature/en";
+import ja from "../../../../locals/top/feature/ja";
 import React from "react";
 import { FadeInBottom } from "../../common/FadeInBottom";
 import SectionHeading from "../../common/SectionHeading";
@@ -78,8 +80,8 @@ const listsEn = [
 ];
 
 const Feature = () => {
-  // const { locale } = useRouter();
-  // const lists = locale === "en" ? en : ja;
+  const pathname = usePathname();
+  const lists = pathname.includes("eng") ? en : ja;
 
   return (
     <FadeInBottom>
@@ -87,7 +89,7 @@ const Feature = () => {
         <div className="mx-auto max-w-[1284px]">
           <SectionHeading titleJp="エコーハウスの特徴" titleEn="Feature" />
           <ul className="flex flex-col gap-16 md:flex-row md:flex-wrap md:justify-center md:gap-x-4">
-            {/* {lists.map((item, index) => (
+            {lists.map((item, index) => (
               <li className="flex flex-col items-center md:w-[30%] md:px-10" key={index}>
                 <p>
                   <Image src={item.image} alt={item.alt} width="60" height="60" />
@@ -95,21 +97,7 @@ const Feature = () => {
                 <div className="mt-2 flex justify-center text-center md:items-center">
                   <p className="mt-3 flex flex-col items-center text-center">
                     <span className="text-xl font-bold">{item.title}</span>
-                    {locale === "ja" && <span className="font-accent text-xs">{item.titleSub}</span>}
-                  </p>
-                </div>
-                <p className="mt-4 text-center">{item.text}</p>
-              </li>
-            ))} */}
-            {listsJa.map((item, index) => (
-              <li className="flex flex-col items-center md:w-[30%] md:px-10" key={index}>
-                <p>
-                  <Image src={item.image} alt={item.alt} width="60" height="60" />
-                </p>
-                <div className="mt-2 flex justify-center text-center md:items-center">
-                  <p className="mt-3 flex flex-col items-center text-center">
-                    <span className="text-xl font-bold">{item.title}</span>
-                    <span className="font-accent text-xs">{item.titleSub}</span>
+                    {!pathname.includes("eng") && <span className="font-accent text-xs">{item.titleSub}</span>}
                   </p>
                 </div>
                 <p className="mt-4 text-center">{item.text}</p>

@@ -1,5 +1,6 @@
+"use client";
+
 import Image from "next/image";
-// import { useRouter } from "next/router";
 import Link from "next/link";
 import SectionHeading from "../../common/SectionHeading";
 import Button from "../../common/Button";
@@ -9,8 +10,6 @@ import { FadeInBottom } from "../../common/FadeInBottom";
 import React from "react";
 
 const Blog = ({ blogs }: { blogs: Array<any> }) => {
-  // const { locale } = useRouter();
-
   return (
     <FadeInBottom>
       <section className="bg-white-200 px-4 py-16" id="blog">

@@ -1,12 +1,12 @@
 "use client";
 
 import React from "react";
-// import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import { Autoplay, EffectFade } from "swiper/modules";
-// import clsx from "clsx";
+import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -17,7 +17,7 @@ const slides = [
 ];
 
 const MainVisual = () => {
-  // const { locale } = useRouter();
+  const pathname = usePathname();
 
   return (
     <div className="relative h-[calc(100vh_-_8rem)] w-full">
@@ -49,14 +49,13 @@ const MainVisual = () => {
         <h1>
           <Image src="/images/main-logo.png" width="368" height="103" alt="女性専用シェアハウス Echo House" className="" />
         </h1>
-        {/* <ul className="flex justify-center gap-3">
+        <ul className="flex justify-center gap-3">
           <li>
             <Link
               href="/"
-              locale="ja"
               className={clsx("flex h-8 w-24 items-center justify-center rounded-full text-sm font-bold transition-opacity duration-700 ease-out-expo hover:opacity-50", {
-                "bg-white-100": locale === "en",
-                "bg-gradient-green text-white-100 pointer-events-none": locale !== "en"
+                "bg-white-100": pathname.includes("eng"),
+                "bg-gradient-green text-white-100 pointer-events-none": !pathname.includes("eng")
               })}
             >
               日本語
@@ -64,17 +63,16 @@ const MainVisual = () => {
           </li>
           <li>
             <Link
-              href="/"
-              locale="en"
+              href="/eng/"
               className={clsx("flex h-8 w-24 items-center justify-center rounded-full bg-white-100 text-sm font-bold transition-opacity duration-700 ease-out-expo hover:opacity-50", {
-                "bg-white-100": locale !== "en",
-                "bg-gradient-green text-white-100 pointer-events-none": locale === "en"
+                "bg-white-100": !pathname.includes("eng"),
+                "bg-gradient-green text-white-100 pointer-events-none": pathname.includes("eng")
               })}
             >
               English
             </Link>
           </li>
-        </ul> */}
+        </ul>
       </div>
       <div className="absolute bottom-8 left-[45%] md:left-[49%]">
         <Link href="#about">

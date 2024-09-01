@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import clsx from "clsx";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
@@ -8,13 +9,15 @@ import useScrollActivator from "../../../../utils/scrollActivator";
 import React from "react";
 
 export default function Header() {
+  const pathname = usePathname();
+
   const navigation = [
-    { name: "top", href: "/" },
-    { name: "about", href: "/#about" },
-    { name: "room", href: "/#room" },
-    { name: "review", href: "/reviews/" },
-    { name: "blog", href: "/blogs/" },
-    { name: "access", href: "/#access" }
+    { name: "top", href: !pathname.includes("eng") ? "/" : "/eng/" },
+    { name: "about", href: !pathname.includes("eng") ? "/#about" : "/eng#about" },
+    { name: "room", href: !pathname.includes("eng") ? "/#room" : "/eng#room" },
+    { name: "review", href: !pathname.includes("eng") ? "/reviews/" : "/eng/reviews" },
+    { name: "blog", href: !pathname.includes("eng") ? "/blogs/" : "/eng/blogs" },
+    { name: "access", href: !pathname.includes("eng") ? "/#access" : "/eng#access" }
   ];
 
   const sns = [

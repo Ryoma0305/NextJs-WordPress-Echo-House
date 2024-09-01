@@ -1,12 +1,12 @@
 import React from "react";
 import Image from "next/image";
-import { formatJapaneseDate } from "../../../utils/formatDate";
-import { getReviewPost } from "../../../../lib/api";
-import { getReviewPostsWithSlug } from "../../../../lib/api";
+import { formatJapaneseDate } from "../../../../utils/formatDate";
+import { getReviewPost } from "../../../../../lib/api";
+import { getReviewPostsWithSlug } from "../../../../../lib/api";
 import { Metadata } from "next";
-import Button from "../../_components/common/Button";
-import ReviewInfo from "../../_components/reviews/ReviewInfo";
-import ReviewImages from "../../_components/reviews/ReviewImages";
+import Button from "../../../_components/common/Button";
+import ReviewInfo from "../../../_components/reviews/ReviewInfo";
+import ReviewImages from "../../../_components/reviews/ReviewImages";
 
 type Props = {
   params: {

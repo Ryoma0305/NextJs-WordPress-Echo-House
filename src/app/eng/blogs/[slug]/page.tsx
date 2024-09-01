@@ -1,10 +1,10 @@
 import React from "react";
-import { formatJapaneseDate } from "../../../utils/formatDate";
+import { formatJapaneseDate } from "../../../../utils/formatDate";
 
-import { getBlogPost } from "../../../../lib/api";
-import { getBlogPostsWithSlug } from "../../../../lib/api";
+import { getBlogPost } from "../../../../../lib/api";
+import { getBlogPostsWithSlug } from "../../../../../lib/api";
 import { Metadata } from "next";
-import Button from "../../_components/common/Button";
+import Button from "../../../_components/common/Button";
 
 type Props = {
   params: {
