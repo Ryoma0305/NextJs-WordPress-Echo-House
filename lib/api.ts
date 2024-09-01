@@ -155,13 +155,13 @@ export async function getBlogPosts() {
   return data;
 }
 
-export async function getBlogPostsWithId() {
+export async function getBlogPostsWithSlug() {
   const data = await client.query({
     query: gql`
       query reviewsQuery {
         blogs(first: 50) {
           nodes {
-            id
+            slug
           }
         }
       }
@@ -171,12 +171,11 @@ export async function getBlogPostsWithId() {
   return data;
 }
 
-export async function getBlogPost(params: { id: string }) {
+export async function getBlogPost(params: { slug: string }) {
   const data = await client.query({
     query: gql`
-      query GetBlogById($id: ID!) {
-        blogBy(id: $id) {
-          date
+      query GetBlogBySlug($slug: String!) {
+        blogBy(slug: $slug) {
           featuredImage {
             node {
               sourceUrl
@@ -185,11 +184,12 @@ export async function getBlogPost(params: { id: string }) {
           id
           title
           content
+          date
         }
       }
     `,
     variables: {
-      id: params.id
+      slug: params.slug
     }
   });
 

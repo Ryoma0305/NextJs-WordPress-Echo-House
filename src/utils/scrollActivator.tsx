@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect } from "react";
 
 const useScrollActivator = (top: number) => {
