@@ -5,6 +5,7 @@ import Link from "next/link";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 import BackToTopButton from "../../../../app/_components/common/BackToTopButton";
 import React from "react";
+import { montserrat } from "@/app/fonts/fonts";
 
 const Footer = () => {
   const pathname = usePathname();
@@ -32,7 +33,7 @@ const Footer = () => {
       <div className="mx-auto max-w-[1200px]">
         <div className="md:flex md:justify-between">
           <p className="flex flex-col items-center text-xs md:text-base">
-            女性専用シェアハウス<span className="font-accent text-2xl font-black md:text-3xl">ECHO HOUSE</span>
+            女性専用シェアハウス<span className={`${montserrat.className} text-2xl font-black md:text-3xl`}>ECHO HOUSE</span>
           </p>
 
           <ul className="hidden md:flex md:gap-10">

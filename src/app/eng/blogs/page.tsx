@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { formatJapaneseDate } from "../../../utils/formatDate";
 import { getBlogPosts } from "../../../../lib/api";
+import { montserrat } from "../../fonts/fonts";
 
 type BlogsType = {
   date: string;
@@ -26,7 +27,7 @@ export default async function Page() {
   return (
     <>
       <div className="flex h-40 items-center justify-center bg-slate-800 md:h-80">
-        <h1 className="font-accent text-xl font-bold uppercase text-white-100 md:text-4xl">Blog</h1>
+        <h1 className={`${montserrat.className} text-xl font-bold uppercase text-white-100 md:text-4xl`}>Blog</h1>
       </div>
       <section className="px-4 pb-32 pt-16">
         <div className="mx-auto flex max-w-[1200px]">

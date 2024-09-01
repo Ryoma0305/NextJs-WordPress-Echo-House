@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { getReviewPosts } from "../../../../lib/api";
+import { montserrat } from "../../fonts/fonts";
 
 interface ReviewsType {
   id: string;
@@ -25,7 +26,7 @@ export default async function Page() {
   return (
     <>
       <div className="flex h-40 items-center justify-center bg-slate-800 md:h-80">
-        <h1 className="font-accent text-xl font-bold uppercase text-white-100 md:text-4xl">Review</h1>
+        <h1 className={`${montserrat.className} text-xl font-bold uppercase text-white-100 md:text-4xl`}>Review</h1>
       </div>
       <section className="px-4 pb-32 pt-16">
         <div className="mx-auto flex max-w-[1200px]">

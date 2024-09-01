@@ -7,6 +7,7 @@ import { Metadata } from "next";
 import Button from "../../../_components/common/Button";
 import ReviewInfo from "../../../_components/reviews/ReviewInfo";
 import ReviewImages from "../../../_components/reviews/ReviewImages";
+import { montserrat } from "../../../fonts/fonts";
 
 type Props = {
   params: {
@@ -81,7 +82,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
   return (
     <>
       <div className="flex h-40 items-center justify-center bg-slate-800 md:h-80">
-        <h1 className="font-accent text-xl font-bold uppercase text-white-100 md:text-4xl">Review</h1>
+        <h1 className={`${montserrat.className} text-xl font-bold uppercase text-white-100 md:text-4xl`}>Review</h1>
       </div>
       <section className="px-4 pb-16 pt-32">
         <div className="mx-auto flex max-w-[1200px] flex-col gap-8">
@@ -97,7 +98,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
           </div>
 
           <div className="flex items-center gap-4 md:mx-auto md:flex md:w-1/2 md:justify-center">
-            <time className="font-accent text-xs" dateTime={new Date(review.date).toISOString()}>
+            <time className={`${montserrat.className} text-xs`} dateTime={new Date(review.date).toISOString()}>
               {formatJapaneseDate(review.date)}
             </time>
             <p className="text-xl font-bold">

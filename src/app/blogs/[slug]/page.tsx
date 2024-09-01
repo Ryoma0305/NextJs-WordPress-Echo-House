@@ -5,6 +5,7 @@ import { getBlogPost } from "../../../../lib/api";
 import { getBlogPostsWithSlug } from "../../../../lib/api";
 import { Metadata } from "next";
 import Button from "../../_components/common/Button";
+import { montserrat } from "../../fonts/fonts";
 
 type Props = {
   params: {
@@ -55,7 +56,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
   return (
     <>
       <div className="flex h-40 items-center justify-center bg-slate-800 md:h-80">
-        <h1 className="font-accent text-xl font-bold uppercase text-white-100 md:text-4xl">Blog</h1>
+        <h1 className={`${montserrat.className} text-xl font-bold uppercase text-white-100 md:text-4xl`}>Blog</h1>
       </div>
       <section className="px-4 pb-16 pt-32">
         <div className="mx-auto flex max-w-[1100px] flex-col gap-8">

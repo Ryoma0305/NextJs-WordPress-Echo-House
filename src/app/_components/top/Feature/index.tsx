@@ -7,6 +7,7 @@ import React from "react";
 import { FadeInBottom } from "../../common/FadeInBottom";
 import SectionHeading from "../../common/SectionHeading";
 import Image from "next/image";
+import { montserrat } from "@/app/fonts/fonts";
 
 const listsJa = [
   { title: "女性専用", titleSub: "FEMALE ONLY", image: "/images/feature-icon-women.png", alt: "", text: "入居者は女性の方のみですので、安心して生活して頂けます。" },
@@ -97,7 +98,7 @@ const Feature = () => {
                 <div className="mt-2 flex justify-center text-center md:items-center">
                   <p className="mt-3 flex flex-col items-center text-center">
                     <span className="text-xl font-bold">{item.title}</span>
-                    {!pathname.includes("eng") && <span className="font-accent text-xs">{item.titleSub}</span>}
+                    {!pathname.includes("eng") && <span className={`${montserrat.className} text-xs`}>{item.titleSub}</span>}
                   </p>
                 </div>
                 <p className="mt-4 text-center">{item.text}</p>

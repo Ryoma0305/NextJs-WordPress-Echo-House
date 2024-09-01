@@ -7,6 +7,7 @@ import clsx from "clsx";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 import useScrollActivator from "../../../../utils/scrollActivator";
 import React from "react";
+import { montserrat } from "@/app/fonts/fonts";
 
 export default function Header() {
   const pathname = usePathname();
@@ -44,13 +45,13 @@ export default function Header() {
       id="header"
     >
       <div className="flex items-center justify-between">
-        <p className="relative cursor-pointer bg-gradient-pink text-center font-accent text-xs ease-out-expo md:text-lg">
+        <p className={`${montserrat.className} relative cursor-pointer bg-gradient-pink text-center text-xs ease-out-expo md:text-lg`}>
           <Link className="flex items-center justify-center px-8 py-4 text-white-100 duration-700 ease-out-expo hover:opacity-50" href="/contact/">
             CONTACT US
           </Link>
         </p>
 
-        <ul className="hidden justify-center gap-12 font-accent text-base md:flex">
+        <ul className={`${montserrat.className} hidden justify-center gap-12 text-base md:flex`}>
           {navigation.map((item) => (
             <li key={item.name}>
               <Link

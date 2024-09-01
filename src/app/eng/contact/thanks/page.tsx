@@ -6,6 +6,7 @@ import clsx from "clsx";
 import en from "../../../../locals/contact/thanks/en";
 import ja from "../../../../locals/contact/thanks/ja";
 import Button from "../../../_components/common/Button";
+import { montserrat } from "../../../fonts/fonts";
 
 export default function Thanks() {
   const pathname = usePathname();
@@ -14,11 +15,11 @@ export default function Thanks() {
   return (
     <>
       <div className="flex h-40 items-center justify-center bg-slate-800 md:h-80">
-        <h1 className="font-accent text-xl font-bold uppercase text-white-100 md:text-4xl">Contact</h1>
+        <h1 className={`${montserrat.className} text-xl font-bold uppercase text-white-100 md:text-4xl`}>Contact</h1>
       </div>
       <div
         className={clsx("py-32", {
-          "font-accent": pathname.includes("eng")
+          [montserrat.className]: pathname.includes("eng")
         })}
       >
         <h2 className="text-center text-3xl font-bold">{t.title}</h2>
