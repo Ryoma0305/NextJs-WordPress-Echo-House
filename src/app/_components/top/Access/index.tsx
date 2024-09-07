@@ -24,6 +24,7 @@ const Access = () => {
                 width="600"
                 height="450"
                 style={{ border: 0 }}
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen={true}
                 referrerPolicy="no-referrer-when-downgrade"
                 className="w-full"

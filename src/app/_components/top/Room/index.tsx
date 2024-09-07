@@ -121,7 +121,7 @@ const Room = () => {
             <ul className="mt-8 flex flex-col items-center px-4 md:flex-row md:flex-wrap md:items-start md:gap-4 md:px-0">
               {views.map((item, index) => (
                 <li className="relative mt-4 w-full rounded-md border border-gray-300 md:mt-0 md:w-[48%]" key={index}>
-                  <iframe className="w-full" src={item.iframe} width="400" height="300" frameBorder="0" style={{ border: 0 }} allowFullScreen={true} aria-hidden="false" tabIndex={0}></iframe>
+                  <iframe className="w-full" src={item.iframe} width="400" height="300" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen={true} aria-hidden="false" tabIndex={0}></iframe>
                   <p className="border-t border-gray-300 p-2 md:mt-4">{item.text}</p>
                 </li>
               ))}
