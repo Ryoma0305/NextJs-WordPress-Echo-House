@@ -1,5 +1,5 @@
 import "./globals.css";
-
+import { GoogleAnalytics } from "@next/third-parties/google";
 import React from "react";
 import type { Metadata } from "next";
 import Header from "../app/_components/common/Header";
@@ -39,6 +39,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/favicon.ico" />
       </Head>
+      <GoogleAnalytics gaId="G-S411VZKLSL" />
       <body className={notoSansJp.className}>
         <Header />
         {children}
