@@ -16,7 +16,7 @@ const ContactForm: FC<ContactFormProps> = ({}) => {
   });
 
   return (
-    <form method="post" action={process.env.NEXT_PUBLIC_HYPERFORM_API_URL} className="flex flex-col space-y-10">
+    <form method="post" action="https://hyperform.jp/api/Bud3fuIR" className="flex flex-col space-y-10">
       <label className="flex flex-col space-y-1">
         <div className="mb-1 text-base font-bold">お問い合わせ種別（Contact reason）</div>
         <div className="flex gap-8">
