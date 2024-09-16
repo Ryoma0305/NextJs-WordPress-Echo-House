@@ -11,7 +11,7 @@ import { montserrat } from "../../fonts/fonts";
 
 export default function Thanks() {
   const pathname = usePathname();
-  const t = pathname.includes("eng") ? en : ja;
+  const t = pathname.includes("en") ? en : ja;
 
   return (
     <>
@@ -23,7 +23,7 @@ export default function Thanks() {
       </div>
       <div
         className={clsx("py-32", {
-          [montserrat.className]: pathname.includes("eng")
+          [montserrat.className]: pathname.includes("en")
         })}
       >
         <h2 className="text-center text-3xl font-bold">{t.title}</h2>

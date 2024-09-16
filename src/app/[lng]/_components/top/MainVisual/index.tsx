@@ -9,14 +9,17 @@ import { Autoplay, EffectFade } from "swiper/modules";
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
-
-const slides = [
-  { image: "/images/main-bg1.jpg", alt: "" },
-  { image: "/images/main-bg2.jpg", alt: "" },
-  { image: "/images/main-bg3.jpg", alt: "" }
-];
+import mvImg1 from "../../../../../../public/images/main-bg1.webp";
+import mvImg2 from "../../../../../../public/images/main-bg2.webp";
+import mvImg3 from "../../../../../../public/images/main-bg3.webp";
 
 const MainVisual = () => {
+  const slides = [
+    { image: mvImg1, alt: "" },
+    { image: mvImg2, alt: "" },
+    { image: mvImg3, alt: "" }
+  ];
+
   const pathname = usePathname();
 
   return (
@@ -36,26 +39,23 @@ const MainVisual = () => {
       >
         {slides.map((item, index) => (
           <SwiperSlide key={index} className="w-full">
-            <div
-              className="h-full w-full bg-cover bg-no-repeat"
-              style={{
-                backgroundImage: `url('${item.image}')`
-              }}
-            ></div>
+            <p>
+              <Image src={item.image} alt={item.alt} width="1280" height="658" className="h-full w-full object-cover" />
+            </p>
           </SwiperSlide>
         ))}
       </Swiper>
       <div className="absolute left-1/2 top-56 z-[1] flex w-[70%] -translate-x-1/2 flex-col items-center gap-4">
         <h1>
-          <Image src="/images/main-logo.png" width="368" height="103" alt="女性専用シェアハウス Echo House" className="" />
+          <Image priority src="/images/main-logo.png" width="368" height="103" alt="女性専用シェアハウス Echo House" className="" />
         </h1>
         <ul className="flex justify-center gap-3">
           <li>
             <Link
-              href="/"
+              href="/ja/"
               className={clsx("flex h-8 w-24 items-center justify-center rounded-full text-sm font-bold transition-opacity duration-700 ease-out-expo hover:opacity-50", {
-                "bg-white-100": pathname.includes("eng"),
-                "bg-gradient-green text-white-100 pointer-events-none": !pathname.includes("eng")
+                "bg-white-100": pathname.includes("en"),
+                "bg-gradient-green text-white-100 pointer-events-none": !pathname.includes("en")
               })}
             >
               日本語
@@ -63,10 +63,10 @@ const MainVisual = () => {
           </li>
           <li>
             <Link
-              href="/eng/"
+              href="/en/"
               className={clsx("flex h-8 w-24 items-center justify-center rounded-full bg-white-100 text-sm font-bold transition-opacity duration-700 ease-out-expo hover:opacity-50", {
-                "bg-white-100": !pathname.includes("eng"),
-                "bg-gradient-green text-white-100 pointer-events-none": pathname.includes("eng")
+                "bg-white-100": !pathname.includes("en"),
+                "bg-gradient-green text-white-100 pointer-events-none": pathname.includes("en")
               })}
             >
               English

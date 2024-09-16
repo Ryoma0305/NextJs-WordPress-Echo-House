@@ -8,6 +8,8 @@ import Blog from "./_components/top/Blog";
 import Access from "./_components/top/Access";
 import Contact from "./_components/top/Contact";
 import { getAllPostsForHome } from "../../../lib/api";
+import Image from "next/image";
+import bgImg from "../../../public/images/f2.jpg";
 
 type ReviewType = {
   reviews: {
@@ -37,7 +39,7 @@ type BlogType = {
 
 export const revalidate = 60;
 
-export default async function Page({ params: { lng } }) {
+export default async function Page() {
   const { data } = await getAllPostsForHome();
   const reviews: ReviewType[] = data?.reviews.nodes || [];
   const blogs: BlogType[] = data?.blogs.nodes || [];
@@ -48,7 +50,9 @@ export default async function Page({ params: { lng } }) {
       <About />
       <Feature />
       <Room />
-      <div className="hidden h-screen bg-[url('/images/f2.jpg')] bg-cover bg-fixed bg-center bg-no-repeat md:block"></div>
+      <p className="sticky left-0 top-0 hidden h-screen md:block">
+        <Image src={bgImg} alt="" width="600" height="400" className="h-full w-full object-cover" />
+      </p>
       <Review reviews={reviews} />
       <Blog blogs={blogs} />
       <Access />

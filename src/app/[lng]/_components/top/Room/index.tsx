@@ -33,9 +33,9 @@ const areas = [
 
 const Room = () => {
   const pathname = usePathname();
-  const facilities = pathname.includes("eng") ? facilitiesEN : facilitiesJa;
-  const rooms = pathname.includes("eng") ? roomsEn : roomsJa;
-  const views = pathname.includes("eng") ? viewsEN : viewsJa;
+  const facilities = pathname.includes("en") ? facilitiesEN : facilitiesJa;
+  const rooms = pathname.includes("en") ? roomsEn : roomsJa;
+  const views = pathname.includes("en") ? viewsEN : viewsJa;
 
   const [modalImage, setModalImage] = useState<string | null>(null);
 
@@ -82,8 +82,8 @@ const Room = () => {
                       </p>
                       <p
                         className={clsx("text-xs", {
-                          "md:text-lg": !pathname.includes("eng"),
-                          "md:text-base": pathname.includes("eng")
+                          "md:text-lg": !pathname.includes("en"),
+                          "md:text-base": pathname.includes("en")
                         })}
                       >
                         {item.title}
@@ -117,7 +117,7 @@ const Room = () => {
               <AreaSlider slides={item.slides} key={index} openModal={openModal} />
             ))}
 
-            <p className="mt-8 inline-block bg-gradient-green px-4 py-3 text-white-100">{!pathname.includes("eng") ? "3Dビュー探索" : "3D View"}</p>
+            <p className="mt-8 inline-block bg-gradient-green px-4 py-3 text-white-100">{!pathname.includes("en") ? "3Dビュー探索" : "3D View"}</p>
             <ul className="mt-8 flex flex-col items-center px-4 md:flex-row md:flex-wrap md:items-start md:gap-4 md:px-0">
               {views.map((item, index) => (
                 <li className="relative mt-4 w-full rounded-md border border-gray-300 md:mt-0 md:w-[48%]" key={index}>

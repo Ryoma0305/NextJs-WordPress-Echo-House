@@ -11,12 +11,12 @@ const Footer = () => {
   const pathname = usePathname();
 
   const navigation = [
-    { name: "top", href: !pathname.includes("eng") ? "/" : "/eng/" },
-    { name: "about", href: !pathname.includes("eng") ? "/#about" : "/eng#about" },
-    { name: "room", href: !pathname.includes("eng") ? "/#room" : "/eng#room" },
-    { name: "review", href: !pathname.includes("eng") ? "/reviews/" : "/eng/reviews" },
-    { name: "blog", href: !pathname.includes("eng") ? "/blogs/" : "/eng/blogs" },
-    { name: "access", href: !pathname.includes("eng") ? "/#access" : "/eng#access" }
+    { name: "top", href: !pathname.includes("en") ? "/" : "/eng/" },
+    { name: "about", href: !pathname.includes("en") ? "/#about" : "/eng#about" },
+    { name: "room", href: !pathname.includes("en") ? "/#room" : "/eng#room" },
+    { name: "review", href: !pathname.includes("en") ? "/reviews/" : "/eng/reviews" },
+    { name: "blog", href: !pathname.includes("en") ? "/blogs/" : "/eng/blogs" },
+    { name: "access", href: !pathname.includes("en") ? "/#access" : "/eng#access" }
   ];
 
   const sns = [
@@ -29,7 +29,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gray-300 px-8 py-16 md:py-24">
+    <footer className="relative bg-gray-300 px-8 py-16 md:py-24">
       <div className="mx-auto max-w-[1200px]">
         <div className="md:flex md:justify-between">
           <p className="flex flex-col items-center text-xs md:text-base">
