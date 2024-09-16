@@ -9,7 +9,7 @@ import Access from "./_components/top/Access";
 import Contact from "./_components/top/Contact";
 import { getAllPostsForHome } from "../../../lib/api";
 import Image from "next/image";
-import bgImg from "../../../public/images/f2.jpg";
+import bgImg from "../../../public/images/f2.webp";
 
 type ReviewType = {
   reviews: {

@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 import { montserrat } from "../../../fonts/fonts";
 import Image from "next/image";
-import bgImg from "../../../../../../public/images/f5.jpg";
+import bgImg from "../../../../../../public/images/f5.webp";
 
 const Contact = () => {
   return (

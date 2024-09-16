@@ -38,9 +38,9 @@ const MainVisual = () => {
         className="absolute inset-0 h-full"
       >
         {slides.map((item, index) => (
-          <SwiperSlide key={index} className="w-full">
-            <p>
-              <Image src={item.image} alt={item.alt} width="1280" height="658" className="h-full w-full object-cover" />
+          <SwiperSlide key={index} className="h-full w-full">
+            <p className="h-full w-full">
+              <Image priority src={item.image} alt={item.alt} width="1280" height="658" className="h-full w-full object-cover" />
             </p>
           </SwiperSlide>
         ))}

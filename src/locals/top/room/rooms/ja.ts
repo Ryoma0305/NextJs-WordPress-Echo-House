@@ -1,3 +1,24 @@
+import slideImg1 from "../../../../../public/images/ps1.webp";
+import slideImg2 from "../../../../../public/images/ps2.webp";
+import slideImg3 from "../../../../../public/images/as1.png";
+import slideImg4 from "../../../../../public/images/as2.png";
+import slideImg5 from "../../../../../public/images/as3.png";
+import slideImg6 from "../../../../../public/images/as5.webp";
+import slideImg7 from "../../../../../public/images/as6.webp";
+import slideImg8 from "../../../../../public/images/as7.webp";
+import slideImg9 from "../../../../../public/images/as8.webp";
+import slideImg10 from "../../../../../public/images/as9.webp";
+import slideImg11 from "../../../../../public/images/ad1.webp";
+import slideImg12 from "../../../../../public/images/ad2.webp";
+import slideImg13 from "../../../../../public/images/ad3.webp";
+import slideImg14 from "../../../../../public/images/ad4.webp";
+import slideImg15 from "../../../../../public/images/ad5.webp";
+import facilityImg1 from "../../../../../public/images/wifi.png";
+import facilityImg2 from "../../../../../public/images/aircon.png";
+import facilityImg3 from "../../../../../public/images/fridge.png";
+import facilityImg4 from "../../../../../public/images/bedseet.png";
+import facilityImg5 from "../../../../../public/images/bed.png";
+
 const roomsJa = [
   {
     name: "スタンダードタイプ",
@@ -5,16 +26,17 @@ const roomsJa = [
     text: "賃料（共益費等込み）",
     slides: {
       images: [
-        { image: "/images/ps1.jpg", alt: "" },
-        { image: "/images/ps2.jpg", alt: "" },
-        { image: "/images/as1.png", alt: "" },
-        { image: "/images/as2.png", alt: "" },
-        { image: "/images/as3.png", alt: "" },
-        { image: "/images/as5.jpg", alt: "" },
-        { image: "/images/as6.jpg", alt: "" },
-        { image: "/images/as7.jpg", alt: "" },
-        { image: "/images/as8.jpg", alt: "" },
-        { image: "/images/as9.jpg", alt: "" }
+        { image: slideImg1, alt: "" },
+        { image: slideImg2, alt: "" },
+        { image: slideImg3, alt: "" },
+        { image: slideImg4, alt: "" },
+        { image: slideImg5, alt: "" },
+        { image: slideImg6, alt: "" },
+        { image: slideImg7, alt: "" },
+        { image: slideImg8, alt: "" },
+        { image: slideImg8, alt: "" },
+        { image: slideImg9, alt: "" },
+        { image: slideImg10, alt: "" }
       ]
     },
     price: [
@@ -24,10 +46,10 @@ const roomsJa = [
     facilities: {
       heading: "付属設備",
       items: [
-        { title: "WiFi", image: "/images/wifi.png", alt: "" },
-        { title: "エアコン", image: "/images/aircon.png", alt: "" },
-        { title: "冷蔵庫", image: "/images/fridge.png", alt: "" },
-        { title: "寝具", image: "/images/bedseet.png", alt: "" }
+        { title: "WiFi", image: facilityImg1, alt: "" },
+        { title: "エアコン", image: facilityImg2, alt: "" },
+        { title: "冷蔵庫", image: facilityImg3, alt: "" },
+        { title: "寝具", image: facilityImg4, alt: "" }
       ]
     }
   },
@@ -37,11 +59,11 @@ const roomsJa = [
     text: "賃料（共益費等込み）",
     slides: {
       images: [
-        { image: "/images/ad1.jpg", alt: "" },
-        { image: "/images/ad2.jpg", alt: "" },
-        { image: "/images/ad3.jpg", alt: "" },
-        { image: "/images/ad4.jpg", alt: "" },
-        { image: "/images/ad5.jpg", alt: "" }
+        { image: slideImg11, alt: "" },
+        { image: slideImg12, alt: "" },
+        { image: slideImg13, alt: "" },
+        { image: slideImg14, alt: "" },
+        { image: slideImg15, alt: "" }
       ]
     },
     price: [
@@ -53,11 +75,11 @@ const roomsJa = [
     facilities: {
       heading: "付属設備",
       items: [
-        { title: "WiFi", image: "/images/wifi.png", alt: "" },
-        { title: "エアコン", image: "/images/aircon.png", alt: "" },
-        { title: "冷蔵庫", image: "/images/fridge.png", alt: "" },
-        { title: "寝具", image: "/images/bedseet.png", alt: "" },
-        { title: "二段ベッド", image: "/images/bed.png", alt: "" }
+        { title: "WiFi", image: facilityImg1, alt: "" },
+        { title: "エアコン", image: facilityImg2, alt: "" },
+        { title: "冷蔵庫", image: facilityImg3, alt: "" },
+        { title: "寝具", image: facilityImg4, alt: "" },
+        { title: "二段ベッド", image: facilityImg5, alt: "" }
       ]
     }
   }

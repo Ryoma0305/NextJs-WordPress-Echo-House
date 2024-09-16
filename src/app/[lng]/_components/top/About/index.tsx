@@ -7,7 +7,7 @@ import React from "react";
 import { FadeInBottom } from "../../../_components/common/FadeInBottom";
 import SectionHeading from "../../../_components/common/SectionHeading";
 import Image from "next/image";
-import bgImg from "../../../../../../public/images/1floor-6.jpg";
+import bgImg from "../../../../../../public/images/1floor-6.webp";
 
 const About = () => {
   const pathname = usePathname();
