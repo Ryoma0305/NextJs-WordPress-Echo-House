@@ -1,5 +1,9 @@
 "use client";
 
+import slideImg1 from "../../../../../../public/images/drawing1.png";
+import slideImg2 from "../../../../../../public/images/drawing2.png";
+import slideImg3 from "../../../../../../public/images/drawing3.png";
+
 import React, { useState } from "react";
 import { usePathname } from "next/navigation";
 import Image, { StaticImageData } from "next/image";
@@ -23,9 +27,9 @@ const areas = [
   {
     slides: {
       images: [
-        { image: "/images/drawing1.png", alt: "" },
-        { image: "/images/drawing2.png", alt: "" },
-        { image: "/images/drawing3.png", alt: "" }
+        { image: slideImg1, alt: "" },
+        { image: slideImg2, alt: "" },
+        { image: slideImg3, alt: "" }
       ]
     }
   }
