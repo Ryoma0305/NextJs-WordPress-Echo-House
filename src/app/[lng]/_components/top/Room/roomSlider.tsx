@@ -30,7 +30,7 @@ const RoomSlider = ({ slides, openModal }: Slides) => {
         modules={[FreeMode, Navigation, Thumbs]}
       >
         {slides.images.map((item, index) => (
-          <SwiperSlide key={index} onClick={() => openModal(item.image)}>
+          <SwiperSlide key={index} onClick={() => openModal(typeof item.image === 'string' ? item.image : item.image.src)}>
             <Image src={item.image} width="431" height="324" alt={item.alt} className="w-full" />
           </SwiperSlide>
         ))}
