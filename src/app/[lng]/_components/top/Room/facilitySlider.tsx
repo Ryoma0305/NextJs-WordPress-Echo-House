@@ -4,17 +4,17 @@ import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import { FreeMode, Navigation } from "swiper/modules";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import React from "react";
 
 type Slides = {
   slides: {
     images: {
-      image: string;
+      image: string | StaticImageData;
       alt: string;
     }[];
   };
-  openModal: (image: string) => void;
+  openModal: (image: string | StaticImageData) => void;
 };
 
 const FacilitySlider = ({ slides, openModal }: Slides) => {

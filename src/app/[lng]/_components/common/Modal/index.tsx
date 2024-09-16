@@ -1,7 +1,12 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import React from "react";
 
-const Modal: React.FC<{ modalImage: string | null; closeModal: () => void }> = ({ modalImage, closeModal }) => {
+interface ModalProps {
+  modalImage: string | StaticImageData | null;
+  closeModal: () => void;
+}
+
+const Modal: React.FC<ModalProps> = ({ modalImage, closeModal }) => {
   return (
     modalImage && (
       <div className="fixed left-0 top-0 z-10 flex h-full w-full items-center justify-center bg-gray-800/75" onClick={closeModal}>

@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { usePathname } from "next/navigation";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import roomsEn from "../../../../../locals/top/room/rooms/en";
 import roomsJa from "../../../../../locals/top/room/rooms/ja";
 import facilitiesEN from "../../../../../locals/top/room/facilities/en";
@@ -37,9 +37,9 @@ const Room = () => {
   const rooms = pathname.includes("en") ? roomsEn : roomsJa;
   const views = pathname.includes("en") ? viewsEN : viewsJa;
 
-  const [modalImage, setModalImage] = useState<string | null>(null);
+  const [modalImage, setModalImage] = useState<string | StaticImageData | null>(null);
 
-  const openModal = (image: string) => {
+  const openModal = (image: string | StaticImageData) => {
     setModalImage(image);
   };
 
