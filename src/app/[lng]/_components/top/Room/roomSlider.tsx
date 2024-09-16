@@ -5,13 +5,13 @@ import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { Swiper as SwiperClass } from "swiper";
 
 type Slides = {
   slides: {
     images: {
-      image: string;
+      image: string | StaticImageData;
       alt: string;
     }[];
   };
