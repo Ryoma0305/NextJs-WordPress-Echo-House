@@ -9,6 +9,7 @@ import { Autoplay, EffectFade } from "swiper/modules";
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
+import logoImg from "../../../../../../public/images/main-logo.png";
 import mvImg1 from "../../../../../../public/images/main-bg1.webp";
 import mvImg2 from "../../../../../../public/images/main-bg2.webp";
 import mvImg3 from "../../../../../../public/images/main-bg3.webp";
@@ -47,7 +48,7 @@ const MainVisual = () => {
       </Swiper>
       <div className="absolute left-1/2 top-56 z-[1] flex w-[70%] -translate-x-1/2 flex-col items-center gap-4">
         <h1>
-          <Image priority src="/images/main-logo.png" width="368" height="103" alt="女性専用シェアハウス Echo House" className="" />
+          <Image priority src={logoImg} width="368" height="103" alt="女性専用シェアハウス Echo House" className="" />
         </h1>
         <ul className="flex justify-center gap-3">
           <li>
