@@ -4,20 +4,17 @@ import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import { FreeMode, Navigation } from "swiper/modules";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import React from "react";
 
-type Slides = {
+type AreaSliderProps = {
   slides: {
-    images: {
-      image: string;
-      alt: string;
-    }[];
+    images: { image: string | StaticImageData; alt: string; }[];
   };
-  openModal: (image: string) => void;
+  openModal: (image: string | StaticImageData) => void;
 };
 
-const AreaSlider = ({ slides, openModal }: Slides) => {
+const AreaSlider: React.FC<AreaSliderProps> = ({ slides, openModal }) => {
   return (
     <div className="pb-8">
       <Swiper
