@@ -1,26 +1,40 @@
+import slideImg1 from "../../../../../public/images/f1.webp";
+import slideImg2 from "../../../../../public/images/f2.webp";
+import slideImg3 from "../../../../../public/images/f3.webp";
+import slideImg4 from "../../../../../public/images/f4.webp";
+import slideImg5 from "../../../../../public/images/f5.webp";
+import slideImg6 from "../../../../../public/images/f6.webp";
+import slideImg7 from "../../../../../public/images/f7.webp";
+import slideImg8 from "../../../../../public/images/af2.png";
+import facilityImg1 from "../../../../../public/images/television.png";
+import facilityImg2 from "../../../../../public/images/laundry.png";
+import facilityImg3 from "../../../../../public/images/kitchen.png";
+import facilityImg4 from "../../../../../public/images/toilet.png";
+import facilityImg5 from "../../../../../public/images/shower.png";
+
 const facilitiesJa = [
   {
     slides: {
       images: [
-        { image: "/images/f1.jpg", alt: "" },
-        { image: "/images/f2.jpg", alt: "" },
-        { image: "/images/f3.jpg", alt: "" },
-        { image: "/images/f4.jpg", alt: "" },
-        { image: "/images/f5.jpg", alt: "" },
-        { image: "/images/f6.jpg", alt: "" },
-        { image: "/images/f7.jpg", alt: "" },
-        { image: "/images/af2.png", alt: "" },
-        { image: "/images/af2.png", alt: "" }
+        { image: slideImg1, alt: "" },
+        { image: slideImg2, alt: "" },
+        { image: slideImg3, alt: "" },
+        { image: slideImg4, alt: "" },
+        { image: slideImg5, alt: "" },
+        { image: slideImg6, alt: "" },
+        { image: slideImg7, alt: "" },
+        { image: slideImg8, alt: "" },
+        { image: slideImg8, alt: "" }
       ]
     },
     facilities: {
       heading: "共有スペース付属設備",
       items: [
-        { title: "テレビ", image: "/images/television.png", alt: "" },
-        { title: "洗濯機", image: "/images/laundry.png", alt: "" },
-        { title: "キッチン", image: "/images/kitchen.png", alt: "" },
-        { title: "トイレ", image: "/images/toilet.png", alt: "" },
-        { title: "シャワー", image: "/images/shower.png", alt: "" }
+        { title: "テレビ", image: facilityImg1, alt: "" },
+        { title: "洗濯機", image: facilityImg2, alt: "" },
+        { title: "キッチン", image: facilityImg3, alt: "" },
+        { title: "トイレ", image: facilityImg4, alt: "" },
+        { title: "シャワー", image: facilityImg5, alt: "" }
       ]
     }
   }
